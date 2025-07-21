@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Arts & Culture | FNYDI</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header id="navbar">
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <div class="dropdown">
+        <button>Programs ▾</button>
+        <div class="dropdown-content">
+          <a href="digital-skills.html">Digital Skills</a>
+          <a href="arts-culture.html">Arts & Culture</a>
+          <a href="epwp-projects.html">Community Projects</a>
+        </div>
+      </div>
+      <a href="student-portal.html">Student Portal</a>
+      <a href="classroom-rewind.html">Classroom Rewind</a>
+      <a href="events-news.html">Events & News</a>
+      <a href="get-involved.html">Get Involved</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Support Button -->
+  <a href="get-involved.html#support" class="support-btn">Support Us</a>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <h1>Arts & Culture</h1>
+    <p>“FNYDI’s arts division nurtures creative expression, cultural storytelling, and market-ready artistic skills.”</p>
+  </section>
+
+  <!-- Program Overview -->
+  <section class="program-content">
+    <h2>Creative Empowerment</h2>
+    <p>We provide platforms and mentorship for youth to explore, develop, and showcase their artistic talent.</p>
+
+    <h3>What We Offer</h3>
+    <ul>
+      <li>🎨 Painting, drawing, and sculpture workshops</li>
+      <li>🖼️ Public exhibitions at schools, community halls, and local markets</li>
+      <li>🔍 Special projects like the <strong>“Bronze Casting Series 2024”</strong></li>
+      <li>🌟 Testimonials and mentorship from practicing artists</li>
+      <li>🎓 Creative residencies and peer mentorship circles</li>
+    </ul>
+  </section>
+
+  <!-- Gallery Highlights -->
+  <section class="gallery-section">
+    <h2>Gallery Highlights</h2>
+    <div class="gallery-grid">
+      <img src="assets/images/painting1.jpg" alt="Youth Painting" onclick="openLightbox(this)" />
+      <img src="assets/images/exhibition.jpg" alt="Art Showcase" onclick="openLightbox(this)" />
+      <img src="assets/images/casting.jpg" alt="Bronze Casting Project" onclick="openLightbox(this)" />
+    </div>
+  </section>
+
+  <!-- Lightbox Modal -->
+  <div id="lightbox" onclick="this.style.display='none'">
+    <img id="lightbox-img" src="" />
+  </div>
+
+  <!-- Testimonial -->
+  <section class="impact-slider">
+    <blockquote>
+      “My artwork now hangs in a local café. FNYDI believed in me.”<br />
+      <span>– Sipho, 18</span>
+    </blockquote>
+  </section>
+
+  <!-- CTA Downloads -->
+  <section class="cta-banner">
+    <h2>Join Our Arts Movement</h2>
+    <div class="cta-buttons">
+      <a href="assets/forms/arts_signup.pdf" download>📄 Download Signup Form</a>
+      <a href="get-involved.html#support">🎨 Sponsor Art Materials</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>Reg No: 012-647-NPO</p>
+    <p>Email: <a href="mailto:fnydii@gmail.com">fnydii@gmail.com</a></p>
+    <p>Address: 97 Krogh Street, Makhado 0920</p>
+    <p>Phone: 083 402 4342 | 072 718 2327</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

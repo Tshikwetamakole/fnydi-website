@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Portal | FNYDI</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header id="navbar">
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <div class="dropdown">
+        <button>Programs ▾</button>
+        <div class="dropdown-content">
+          <a href="digital-skills.html">Digital Skills</a>
+          <a href="arts-culture.html">Arts & Culture</a>
+          <a href="epwp-projects.html">Community Projects</a>
+        </div>
+      </div>
+      <a href="student-portal.html">Student Portal</a>
+      <a href="classroom-rewind.html">Classroom Rewind</a>
+      <a href="events-news.html">Events & News</a>
+      <a href="get-involved.html">Get Involved</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Support Button -->
+  <a href="get-involved.html#support" class="support-btn">Support Us</a>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <h1>Student Portal</h1>
+    <p>Your personalized learning hub.</p>
+  </section>
+
+  <!-- Login Section -->
+  <section id="loginSection" class="program-content" style="max-width: 500px; margin: auto;">
+    <h2>🔐 Login</h2>
+    <form onsubmit="return studentLogin(event)">
+      <input type="text" id="studentName" placeholder="Full Name" required />
+      <input type="password" id="studentPass" placeholder="Password" required />
+      <button type="submit">Access Portal</button>
+    </form>
+    <p id="loginError" style="color: red; margin-top: 1em;"></p>
+  </section>
+
+  <!-- Portal Dashboard -->
+  <section id="portalDashboard" class="program-content" style="display: none;">
+    <h2>📄 My Certificates</h2>
+    <ul>
+      <li><a href="assets/certificates/digital-cert1.pdf" target="_blank">IT Literacy Certificate</a></li>
+      <li><a href="assets/certificates/design-cert1.pdf" target="_blank">Graphic Design Certificate</a></li>
+    </ul>
+
+    <h2>📅 Upcoming Classes</h2>
+    <ul>
+      <li>July 24 – Web Design (Zoom link emailed)</li>
+      <li>July 30 – Career Talk: Tech Opportunities</li>
+    </ul>
+
+    <h2>📥 Resources</h2>
+    <ul>
+      <li><a href="assets/notes/networking-notes.pdf" download>Networking Fundamentals Notes</a></li>
+      <li><a href="assets/notes/arts-workshop-guide.pdf" download>Arts Workshop Guide</a></li>
+    </ul>
+
+    <button onclick="logoutStudent()">🔓 Logout</button>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>Reg No: 012-647-NPO</p>
+    <p>Email: <a href="mailto:fnydii@gmail.com">fnydii@gmail.com</a></p>
+    <p>Address: 97 Krogh Street, Makhado 0920</p>
+    <p>Phone: 083 402 4342 | 072 718 2327</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
