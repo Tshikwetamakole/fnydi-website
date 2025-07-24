@@ -50,10 +50,15 @@
     <!-- Contact Form -->
     <div class="contact-form">
       <h2>📧 Send a Message</h2>
-      <form onsubmit="sendAutoReply(event)">
+      <form action="https://formsubmit.co/fnydii@gmail.com" method="POST">
         <input type="text" id="contactName" placeholder="Your Name" required />
         <input type="email" id="contactEmail" placeholder="Your Email" required />
         <textarea id="contactMessage" placeholder="Your Message" rows="5" required></textarea>
+
+        <!-- Hidden fields -->
+  <input type="hidden" name="_captcha" value="false">
+  <input type="hidden" name="_next" value="https://tshikwetamakole.github.io/fnydi-website/thank-you.html">
+  <input type="text" name="_honey" style="display:none">
         <button type="submit">Send</button>
         <p id="formResponse" style="margin-top: 1em;"></p>
       </form>
