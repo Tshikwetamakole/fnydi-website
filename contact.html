@@ -1,91 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact Us | FNYDI</title>
-  <link rel="stylesheet" href="css/styles.css" />
-</head>
-<body>
-
-  <!-- Navbar -->
-  <header class="navbar">
-    <div class="nav-container">
-      <a href="index.html" class="logo">
-        <img src="assets/logos/logo.png" alt="FNYDI Logo">
-      </a>
-      <button class="hamburger" id="hamburger">&#9776;</button>
-      <nav class="nav-links" id="nav-links">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <div class="dropdown">
-          <button class="dropbtn">Programs ▾</button>
-          <div class="dropdown-content">
-            <a href="digital-skills.html">Digital Skills</a>
-            <a href="arts-culture.html">Arts & Culture</a>
-            <a href="epwp-projects.html">Community Projects</a>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us | FNYDI</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <header class="navbar">
+      <div class="nav-container">
+        <a href="index.html" class="logo">
+          <img src="assets/logos/logo.png" alt="FNYDI Logo" />
+        </a>
+        <button class="hamburger" id="hamburger">&#9776;</button>
+        <nav class="nav-links" id="nav-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <div class="dropdown">
+            <button class="dropbtn">Programs ▾</button>
+            <div class="dropdown-content">
+              <a href="digital-skills.html">Digital Skills</a>
+              <a href="arts-culture.html">Arts & Culture</a>
+              <a href="epwp-projects.html">Community Projects</a>
+            </div>
           </div>
-        </div>
-        <a href="student-portal.html">Student Portal</a>
-        <a href="classroom-rewind.html">Classroom Rewind</a>
-        <a href="events.news.html">Events & News</a>
-        <a href="get-involved.html">Get Involved</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-    </div>
-  </header>
+          <a href="student-portal.html">Student Portal</a>
+          <a href="classroom-rewind.html">Classroom Rewind</a>
+          <a href="events.news.html">Events & News</a>
+          <a href="get-involved.html">Get Involved</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+    </header>
 
-  <!-- Floating Action Buttons -->
-  <a href="get-involved.html#support" class="support-btn">Support Us</a>
-  <a href="https://wa.me/27834024342" class="whatsapp-btn" target="_blank" rel="noopener noreferrer" title="WhatsApp Us">💬</a>
+    <!-- Floating Action Buttons -->
+    <a href="get-involved.html#support" class="support-btn">Support Us</a>
+    <a
+      href="https://wa.me/27834024342"
+      class="whatsapp-btn"
+      target="_blank"
+      rel="noopener noreferrer"
+      title="WhatsApp Us"
+      >💬</a
+    >
 
-  <!-- Page Header -->
-  <section class="page-header">
-    <h1>Contact Us</h1>
-    <p>We’d love to hear from you. Reach out with questions, ideas or support inquiries.</p>
-  </section>
+    <!-- Page Header -->
+    <section class="page-header">
+      <h1>Contact Us</h1>
+      <p>
+        We’d love to hear from you. Reach out with questions, ideas or support
+        inquiries.
+      </p>
+    </section>
 
-  <!-- Contact Grid -->
-  <section class="contact-grid">
-    <!-- Contact Form -->
-    <div class="contact-form">
-      <h2>📧 Send a Message</h2>
-      <form action="https://formspree.io/f/xvgqkegn" method="POST">
-<input type="text" id="contactName" name="name" placeholder="Your Name" required />
-<input type="email" id="contactEmail" name="email" placeholder="Your Email" required />
-<textarea id="contactMessage" name="message" placeholder="Your Message" rows="5" required></textarea>
+    <!-- Contact Grid -->
+    <section class="contact-grid">
+      <!-- Contact Form -->
+      <div class="contact-form">
+        <h2>📧 Send a Message</h2>
+        <form action="https://formspree.io/f/xvgqkegn" method="POST">
+          <input
+            type="text"
+            id="contactName"
+            name="name"
+            placeholder="Your Name"
+            required
+          />
+          <input
+            type="email"
+            id="contactEmail"
+            name="email"
+            placeholder="Your Email"
+            required
+          />
+          <textarea
+            id="contactMessage"
+            name="message"
+            placeholder="Your Message"
+            rows="5"
+            required
+          ></textarea>
+
+          <!-- Hidden fields -->
+          <input type="hidden" name="_captcha" value="false" />
+          <input
+            type="hidden"
+            name="_next"
+            value="https://tshikwetamakole.github.io/fnydi-website/thank-you.html"
+          />
+          <input type="text" name="_honey" style="display: none" />
+          <button type="submit">Send</button>
+          <p id="formResponse" style="margin-top: 1em"></p>
+        </form>
+      </div>
 
 
-        <!-- Hidden fields -->
-  <input type="hidden" name="_captcha" value="false">
-  <input type="hidden" name="_next" value="https://tshikwetamakole.github.io/fnydi-website/thank-you.html">
-  <input type="text" name="_honey" style="display:none">
-        <button type="submit">Send</button>
-        <p id="formResponse" style="margin-top: 1em;"></p>
-      </form>
-    </div>
+      <!-- testing-->
+       <form action="https://formspree.io/f/xvgqkegn" method="POST">
+  <input type="text" name="name" placeholder="Test Name" required>
+  <input type="email" name="email" placeholder="Test Email" required>
+  <textarea name="message" placeholder="Test Message" required></textarea>
+  <button type="submit">Send Test</button>
+</form>
 
-    <!-- Contact Details & Map -->
-    <div class="contact-details">
-      <h2>📍 Visit or Call</h2>
-      <p><strong>Address:</strong> 97 Krogh Street, Makhado 0920</p>
-      <p><strong>Email:</strong> <a href="mailto:fnydii@gmail.com">fnydii@gmail.com</a></p>
-      <p><strong>Phone:</strong> 083 402 4342 | 072 718 2327</p>
-      <iframe
-        src="https://maps.google.com/maps?q=97%20Krogh%20Street,%20Makhado&t=&z=15&ie=UTF8&iwloc=&output=embed"
-        width="100%" height="250" frameborder="0" style="border:0;" allowfullscreen
-      ></iframe>
-    </div>
-  </section>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <p>Reg No: 012-647-NPO</p>
-    <p>Email: <a href="mailto:fnydii@gmail.com">fnydii@gmail.com</a></p>
-    <p>Address: 97 Krogh Street, Makhado 0920</p>
-    <p>Phone: 083 402 4342 | 072 718 2327</p>
-  </footer>
+      <!-- Contact Details & Map -->
+      <div class="contact-details">
+        <h2>📍 Visit or Call</h2>
+        <p><strong>Address:</strong> 97 Krogh Street, Makhado 0920</p>
+        <p>
+          <strong>Email:</strong>
+          <a href="mailto:fnydii@gmail.com">fnydii@gmail.com</a>
+        </p>
+        <p><strong>Phone:</strong> 083 402 4342 | 072 718 2327</p>
+        <iframe
+          src="https://maps.google.com/maps?q=97%20Krogh%20Street,%20Makhado&t=&z=15&ie=UTF8&iwloc=&output=embed"
+          width="100%"
+          height="250"
+          frameborder="0"
+          style="border: 0"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </section>
 
-  <script src="js/main.js"></script>
-</body>
+    <!-- Footer -->
+    <footer class="footer">
+      <p>Reg No: 012-647-NPO</p>
+      <p>Email: <a href="mailto:fnydii@gmail.com">fnydii@gmail.com</a></p>
+      <p>Address: 97 Krogh Street, Makhado 0920</p>
+      <p>Phone: 083 402 4342 | 072 718 2327</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+  </body>
 </html>
