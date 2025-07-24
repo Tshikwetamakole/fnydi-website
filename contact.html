@@ -60,50 +60,28 @@
       <div class="contact-form">
         <h2>📧 Send a Message</h2>
         <form action="https://formspree.io/f/xvgqkegn" method="POST">
-          <input
-            type="text"
-            id="contactName"
-            name="name"
-            placeholder="Your Name"
-            required
-          />
-          <input
-            type="email"
-            id="contactEmail"
-            name="email"
-            placeholder="Your Email"
-            required
-          />
+          <input type="text" name="name" placeholder="Your Name" required />
+          <input type="email" name="email" placeholder="Your Email" required />
           <textarea
-            id="contactMessage"
             name="message"
             placeholder="Your Message"
             rows="5"
             required
           ></textarea>
 
-          <!-- Hidden fields -->
-          <input type="hidden" name="_captcha" value="false" />
+          <!-- Optional spam protection -->
+          <input type="text" name="_honey" style="display: none" />
+
+          <!-- Optional redirect -->
           <input
             type="hidden"
-            name="_next"
+            name="_redirect"
             value="https://tshikwetamakole.github.io/fnydi-website/thank-you.html"
           />
-          <input type="text" name="_honey" style="display: none" />
+
           <button type="submit">Send</button>
-          <p id="formResponse" style="margin-top: 1em"></p>
         </form>
       </div>
-
-
-      <!-- testing-->
-       <form action="https://formspree.io/f/xvgqkegn" method="POST">
-  <input type="text" name="name" placeholder="Test Name" required>
-  <input type="email" name="email" placeholder="Test Email" required>
-  <textarea name="message" placeholder="Test Message" required></textarea>
-  <button type="submit">Send Test</button>
-</form>
-
 
       <!-- Contact Details & Map -->
       <div class="contact-details">
