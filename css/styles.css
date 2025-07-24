@@ -280,7 +280,7 @@ a:hover {
 /* === HERO SECTION === */
 .hero {
   background: linear-gradient(135deg, rgba(0, 75, 35, 0.8), rgba(0, 127, 95, 0.8)), 
-              url('../assets/images/gallery1.jpg') center/cover no-repeat;
+              url('../assets/images/gallery2.jpg') center/cover no-repeat;
   padding: var(--space-20) var(--space-4);
   text-align: center;
   color: var(--neutral-100);
