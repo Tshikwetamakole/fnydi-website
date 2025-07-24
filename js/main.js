@@ -242,3 +242,61 @@ function logoutStudent() {
   document.getElementById("studentPass").value = "";
   document.getElementById("loginError").textContent = "";
 }
+
+// Handle Formspree response with popup
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById("contactForm");
+  const responseBox = document.getElementById("formResponse");
+
+  if (form) {
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      const formData = new FormData(form);
+      const submitButton = form.querySelector('button[type="submit"]');
+
+      // Set loading state
+      const originalText = submitButton.textContent;
+      submitButton.textContent = "Sending...";
+      submitButton.disabled = true;
+
+      fetch(form.action, {
+        method: "POST",
+        body: formData,
+        headers: {
+          Accept: "application/json"
+        }
+      })
+      .then(response => {
+        if (response.ok) {
+          responseBox.innerHTML = `
+            <div style="color: green; background: #e6f9ee; padding: 1rem; border-left: 4px solid green; border-radius: 5px;">
+              <strong>✓ Thank you!</strong><br>Your message was sent successfully.
+            </div>`;
+          responseBox.style.display = "block";
+          form.reset();
+        } else {
+          return response.json().then(data => {
+            throw new Error(data.error || "Oops! Something went wrong.");
+          });
+        }
+      })
+      .catch(error => {
+        responseBox.innerHTML = `
+          <div style="color: red; background: #ffe6e6; padding: 1rem; border-left: 4px solid red; border-radius: 5px;">
+            <strong>⚠ Error:</strong><br>${error.message}
+          </div>`;
+        responseBox.style.display = "block";
+      })
+      .finally(() => {
+        submitButton.textContent = originalText;
+        submitButton.disabled = false;
+
+        // Auto-hide after 5s
+        setTimeout(() => {
+          responseBox.style.display = "none";
+          responseBox.innerHTML = "";
+        }, 5000);
+      });
+    });
+  }
+});
