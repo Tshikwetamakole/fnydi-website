@@ -165,6 +165,143 @@ function debounce(func, wait) {
 const debouncedScrollHandler = debounce(function () {}, 10);
 window.addEventListener("scroll", debouncedScrollHandler);
 
+// Netlify Database API Functions
+class NetlifyDB {
+  constructor() {
+    this.baseUrl = window.location.origin;
+  }
+
+  async getPost(postId) {
+    try {
+      const response = await fetch(`/.netlify/functions/get-post?id=${postId}`);
+      
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      
+      const result = await response.json();
+      
+      if (!result.success) {
+        throw new Error(result.error || 'Failed to fetch post');
+      }
+      
+      return result.data;
+    } catch (error) {
+      console.error('Error fetching post:', error);
+      throw error;
+    }
+  }
+
+  async getPosts(options = {}) {
+    try {
+      const params = new URLSearchParams();
+      
+      if (options.limit) params.append('limit', options.limit);
+      if (options.offset) params.append('offset', options.offset);
+      if (options.category) params.append('category', options.category);
+      
+      const response = await fetch(`/.netlify/functions/get-posts?${params}`);
+      
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      
+      const result = await response.json();
+      
+      if (!result.success) {
+        throw new Error(result.error || 'Failed to fetch posts');
+      }
+      
+      return {
+        posts: result.data,
+        pagination: result.pagination
+      };
+    } catch (error) {
+      console.error('Error fetching posts:', error);
+      throw error;
+    }
+  }
+
+  // Utility function to display posts in the UI
+  async displayPosts(containerSelector, options = {}) {
+    const container = document.querySelector(containerSelector);
+    if (!container) return;
+
+    try {
+      container.innerHTML = '<div class="loading">Loading posts...</div>';
+      
+      const { posts } = await this.getPosts(options);
+      
+      if (!posts || posts.length === 0) {
+        container.innerHTML = '<div class="no-posts">No posts found.</div>';
+        return;
+      }
+
+      container.innerHTML = posts.map(post => `
+        <article class="post-card">
+          <h3>${post.title || 'Untitled'}</h3>
+          <p class="post-excerpt">${post.excerpt || post.content?.substring(0, 150) || ''}...</p>
+          <div class="post-meta">
+            <span class="post-date">${new Date(post.created_at).toLocaleDateString()}</span>
+            ${post.category ? `<span class="post-category">${post.category}</span>` : ''}
+          </div>
+          <a href="#" class="read-more" data-post-id="${post.id}">Read More</a>
+        </article>
+      `).join('');
+
+      // Add click handlers for read more links
+      container.querySelectorAll('.read-more').forEach(link => {
+        link.addEventListener('click', async (e) => {
+          e.preventDefault();
+          const postId = e.target.dataset.postId;
+          await this.displaySinglePost(postId);
+        });
+      });
+
+    } catch (error) {
+      container.innerHTML = `<div class="error">Error loading posts: ${error.message}</div>`;
+    }
+  }
+
+  async displaySinglePost(postId, containerSelector = '.post-detail') {
+    const container = document.querySelector(containerSelector);
+    if (!container) return;
+
+    try {
+      container.innerHTML = '<div class="loading">Loading post...</div>';
+      
+      const post = await this.getPost(postId);
+      
+      container.innerHTML = `
+        <article class="post-full">
+          <h1>${post.title || 'Untitled'}</h1>
+          <div class="post-meta">
+            <span class="post-date">${new Date(post.created_at).toLocaleDateString()}</span>
+            ${post.category ? `<span class="post-category">${post.category}</span>` : ''}
+            ${post.author ? `<span class="post-author">By ${post.author}</span>` : ''}
+          </div>
+          <div class="post-content">${post.content || ''}</div>
+        </article>
+      `;
+    } catch (error) {
+      container.innerHTML = `<div class="error">Error loading post: ${error.message}</div>`;
+    }
+  }
+}
+
+// Initialize NetlifyDB
+window.netlifyDB = new NetlifyDB();
+
+// Example usage when DOM is loaded
+document.addEventListener("DOMContentLoaded", function () {
+  // Check if we're on a page that needs posts
+  const postsContainer = document.querySelector('.posts-container');
+  if (postsContainer) {
+    // Load posts with default options
+    window.netlifyDB.displayPosts('.posts-container', { limit: 6 });
+  }
+});
+
 // Tab functionality for Events & News page
 function showTab(tabName) {
   const tabContents = document.querySelectorAll(".tab-content");
