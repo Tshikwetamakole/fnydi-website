@@ -1,17 +1,29 @@
 /* === CSS CUSTOM PROPERTIES (DESIGN SYSTEM) === */
 :root {
-  /* Colors */
-  --primary-green: #004b23;
-  --secondary-green: #007f5f;
-  --accent-green: #2d6a4f;
-  --light-green: #40916c;
-  --success-green: #52b788;
+  /* Colors - Updated to match logo palette */
+  --primary-orange: #ff6b35;
+  --secondary-orange: #f7931e;
+  --accent-orange: #ff8c42;
+  --dark-orange: #e55934;
+  --light-orange: #ffb347;
 
-  --primary-blue: #05668d;
-  --accent-blue: #028090;
+  --primary-purple: #6a4c93;
+  --secondary-purple: #8b5cf6;
+  --accent-purple: #a855f7;
+  --dark-purple: #553c9a;
+  --light-purple: #c084fc;
 
-  --danger-red: #d7263d;
-  --warning-orange: #f77f00;
+  --primary-red: #e63946;
+  --secondary-red: #d7263d;
+  --accent-red: #ff4757;
+  --dark-red: #c1121f;
+  --light-red: #ff6b6b;
+
+  --primary-grey: #495057;
+  --secondary-grey: #6c757d;
+  --accent-grey: #adb5bd;
+  --light-grey: #e9ecef;
+  --dark-grey: #212529;
 
   --neutral-100: #ffffff;
   --neutral-200: #f8f9fa;
@@ -134,13 +146,13 @@ p {
 }
 
 a {
-  color: var(--primary-blue);
+  color: var(--primary-purple);
   text-decoration: none;
   transition: color var(--transition-fast);
 }
 
 a:hover {
-  color: var(--accent-blue);
+  color: var(--secondary-purple);
   text-decoration: underline;
 }
 
@@ -167,7 +179,7 @@ a:hover {
 
 /* === NAVIGATION === */
 .navbar {
-  background-color: var(--primary-green);
+  background-color: var(--primary-purple);
   position: sticky;
   top: 0;
   width: 100%;
@@ -205,7 +217,7 @@ a:hover {
 }
 
 .logo:hover img {
-  filter: brightness(0) invert(1) sepia(1) saturate(5) hue-rotate(120deg);
+  filter: brightness(0) invert(1) sepia(1) saturate(5) hue-rotate(270deg);
 }
 
 .hamburger {
@@ -247,7 +259,7 @@ a:hover {
 
 .nav-links a:hover,
 .dropbtn:hover {
-  background-color: var(--secondary-green);
+  background-color: var(--secondary-purple);
   color: var(--neutral-100);
   text-decoration: none;
   transform: translateY(-1px);
@@ -263,7 +275,7 @@ a:hover {
   position: absolute;
   top: 100%;
   left: 0;
-  background-color: var(--primary-blue);
+  background-color: var(--primary-orange);
   flex-direction: column;
   min-width: 200px;
   border-radius: var(--radius-lg);
@@ -277,14 +289,14 @@ a:hover {
   padding: var(--space-4);
   text-decoration: none;
   color: var(--neutral-100);
-  background: var(--primary-blue);
+  background: var(--primary-orange);
   display: block;
   transition: background-color var(--transition-fast);
   border-radius: 0;
 }
 
 .dropdown-content a:hover {
-  background-color: var(--accent-blue);
+  background-color: var(--secondary-orange);
   transform: none;
 }
 
@@ -308,8 +320,8 @@ a:hover {
 .hero {
   background: linear-gradient(
       135deg,
-      rgba(0, 75, 35, 0.8),
-      rgba(0, 127, 95, 0.8)
+      rgba(255, 107, 53, 0.8),
+      rgba(106, 76, 147, 0.8)
     ),
     url("../assets/images/gallery2.jpg") center/cover no-repeat;
   padding: var(--space-20) var(--space-4);
@@ -343,7 +355,7 @@ a:hover {
 }
 
 .hero-buttons a {
-  background: var(--secondary-green);
+  background: var(--primary-orange);
   color: var(--neutral-100);
   padding: var(--space-4) var(--space-6);
   text-decoration: none;
@@ -355,7 +367,7 @@ a:hover {
 }
 
 .hero-buttons a:hover {
-  background: var(--success-green);
+  background: var(--secondary-orange);
   transform: translateY(-2px);
   box-shadow: var(--shadow-xl);
   text-decoration: none;
@@ -368,15 +380,15 @@ a:hover {
 
 .hero-buttons a:nth-child(2):hover {
   background: var(--neutral-100);
-  color: var(--primary-green);
+  color: var(--primary-purple);
 }
 
 /* === PAGE HEADER === */
 .page-header {
   background: linear-gradient(
     135deg,
-    var(--primary-green),
-    var(--secondary-green)
+    var(--primary-purple),
+    var(--primary-orange)
   );
   color: var(--neutral-100);
   padding: var(--space-16) var(--space-4);
@@ -404,14 +416,14 @@ a:hover {
 }
 
 .program-content h2 {
-  color: var(--primary-green);
-  border-bottom: 3px solid var(--success-green);
+  color: var(--primary-purple);
+  border-bottom: 3px solid var(--primary-orange);
   padding-bottom: var(--space-2);
   margin-bottom: var(--space-6);
 }
 
 .program-content h3 {
-  color: var(--secondary-green);
+  color: var(--secondary-purple);
   margin-top: var(--space-8);
   margin-bottom: var(--space-4);
 }
@@ -455,7 +467,7 @@ a:hover {
 /* Blockquote */
 blockquote {
   background: var(--neutral-200);
-  border-left: 4px solid var(--secondary-green);
+  border-left: 4px solid var(--primary-orange);
   padding: var(--space-6);
   margin: var(--space-8) 0;
   border-radius: var(--radius-lg);
@@ -467,7 +479,7 @@ blockquote span {
   display: block;
   margin-top: var(--space-4);
   font-weight: 600;
-  color: var(--primary-green);
+  color: var(--primary-purple);
   font-style: normal;
 }
 
@@ -481,7 +493,7 @@ blockquote span {
 }
 
 .cta-buttons a {
-  background: var(--primary-green);
+  background: var(--primary-purple);
   color: var(--neutral-100);
   padding: var(--space-4) var(--space-6);
   border-radius: var(--radius-xl);
@@ -492,18 +504,18 @@ blockquote span {
 }
 
 .cta-buttons a:hover {
-  background: var(--secondary-green);
+  background: var(--secondary-purple);
   transform: translateY(-2px);
   box-shadow: var(--shadow-lg);
   text-decoration: none;
 }
 
 .cta-buttons a:nth-child(2) {
-  background: var(--danger-red);
+  background: var(--primary-red);
 }
 
 .cta-buttons a:nth-child(2):hover {
-  background: #c21e39;
+  background: var(--dark-red);
 }
 
 /* === CONTACT STYLES === */
@@ -526,7 +538,7 @@ blockquote span {
 
 .contact-form h2,
 .contact-details h2 {
-  color: var(--primary-green);
+  color: var(--primary-purple);
   margin-bottom: var(--space-6);
   font-size: var(--text-2xl);
 }
@@ -547,12 +559,12 @@ blockquote span {
 .contact-form input:focus,
 .contact-form textarea:focus {
   outline: none;
-  border-color: var(--secondary-green);
-  box-shadow: 0 0 0 3px rgba(0, 127, 95, 0.1);
+  border-color: var(--primary-orange);
+  box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
 }
 
 .contact-form button {
-  background: var(--secondary-green);
+  background: var(--primary-orange);
   color: var(--neutral-100);
   padding: var(--space-4) var(--space-8);
   border: none;
@@ -570,7 +582,7 @@ blockquote span {
 }
 
 .contact-form button:hover {
-  background: var(--primary-green);
+  background: var(--secondary-orange);
   transform: translateY(-1px);
   box-shadow: var(--shadow-md);
 }
@@ -590,7 +602,7 @@ blockquote span {
   position: fixed;
   bottom: var(--space-6);
   right: var(--space-6);
-  background: var(--danger-red);
+  background: var(--primary-red);
   color: var(--neutral-100);
   padding: var(--space-4) var(--space-6);
   text-decoration: none;
@@ -603,9 +615,9 @@ blockquote span {
 }
 
 .support-btn:hover {
-  background: #c21e39;
+  background: var(--dark-red);
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(215, 38, 61, 0.4);
+  box-shadow: 0 8px 25px rgba(230, 57, 70, 0.4);
   text-decoration: none;
   animation: none;
 }
@@ -640,19 +652,19 @@ blockquote span {
 
 @keyframes pulse {
   0% {
-    box-shadow: 0 0 0 0 rgba(215, 38, 61, 0.7);
+    box-shadow: 0 0 0 0 rgba(230, 57, 70, 0.7);
   }
   70% {
-    box-shadow: 0 0 0 10px rgba(215, 38, 61, 0);
+    box-shadow: 0 0 0 10px rgba(230, 57, 70, 0);
   }
   100% {
-    box-shadow: 0 0 0 0 rgba(215, 38, 61, 0);
+    box-shadow: 0 0 0 0 rgba(230, 57, 70, 0);
   }
 }
 
 /* === FOOTER === */
 .footer {
-  background: var(--neutral-900);
+  background: var(--dark-grey);
   color: var(--neutral-300);
   text-align: center;
   padding: var(--space-12) var(--space-4);
@@ -665,7 +677,7 @@ blockquote span {
 }
 
 .footer a {
-  color: var(--success-green);
+  color: var(--primary-orange);
 }
 
 .footer a:hover {
@@ -683,7 +695,7 @@ blockquote span {
     display: none;
     flex-direction: column;
     width: 100%;
-    background-color: var(--primary-green);
+    background-color: var(--primary-purple);
     padding: var(--space-4) 0;
     position: absolute;
     top: 100%;
@@ -716,12 +728,12 @@ blockquote span {
   .dropdown-content {
     position: static;
     box-shadow: none;
-    background-color: var(--accent-green);
+    background-color: var(--secondary-purple);
     margin-top: 0;
   }
 
   .dropdown-content a {
-    background-color: var(--accent-green);
+    background-color: var(--secondary-purple);
     padding-left: var(--space-8);
   }
 
@@ -820,7 +832,7 @@ a:focus,
 button:focus,
 input:focus,
 textarea:focus {
-  outline: 2px solid var(--secondary-green);
+  outline: 2px solid var(--primary-orange);
   outline-offset: 2px;
 }
 
