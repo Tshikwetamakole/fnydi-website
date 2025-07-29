@@ -1,99 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Events & News | FNYDI</title>
-  <link rel="stylesheet" href="css/styles.css" />
-</head>
-<body>
-
-  <!-- Navbar -->
-  <header class="navbar">
-    <div class="nav-container">
-      <a href="index.html" class="logo">
-        <img src="assets/logos/logo.png" alt="FNYDI Logo">
-      </a>
-      <button class="hamburger" id="hamburger">&#9776;</button>
-      <nav class="nav-links" id="nav-links">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <div class="dropdown">
-          <button class="dropbtn">Programs ▾</button>
-          <div class="dropdown-content">
-            <a href="digital-skills.html">Digital Skills</a>
-            <a href="arts-culture.html">Arts & Culture</a>
-            <a href="epwp-projects.html">Community Job Creation Projects</a>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Events & News | FNYDI</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <header class="navbar">
+      <div class="nav-container">
+        <a href="index.html" class="logo">
+          <img src="assets/logos/logo.png" alt="FNYDI Logo" />
+        </a>
+        <button class="hamburger" id="hamburger">&#9776;</button>
+        <nav class="nav-links" id="nav-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <div class="dropdown">
+            <button class="dropbtn">Programs ▾</button>
+            <div class="dropdown-content">
+              <a href="digital-skills.html">Digital Skills</a>
+              <a href="arts-culture.html">Arts & Culture</a>
+              <a href="epwp-projects.html">Community Job Creation Projects</a>
+            </div>
           </div>
-        </div>
-        <a href="student-portal.html">Student Portal</a>
-        <a href="classroom-rewind.html">Classroom Rewind</a>
-        <a href="events.news.html">Events & News</a>
-        <a href="get-involved.html">Get Involved</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-    </div>
-  </header>
+          <a href="student-portal.html">Student Portal</a>
+          <a href="classroom-rewind.html">Classroom Rewind</a>
+          <a href="events.news.html">Events & News</a>
+          <a href="get-involved.html">Get Involved</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+    </header>
 
-  <!-- Floating Action Buttons -->
-  <a href="get-involved.html#support" class="support-btn">Support Us</a>
-  <a href="https://wa.me/27834024342" class="whatsapp-btn" target="_blank" rel="noopener noreferrer" title="WhatsApp Us">💬</a>
+    <!-- Floating Action Buttons -->
+    <a href="get-involved.html#support" class="support-btn">Support Us</a>
+    <a
+      href="https://wa.me/27834024342"
+      class="whatsapp-btn"
+      target="_blank"
+      rel="noopener noreferrer"
+      title="WhatsApp Us"
+      >💬</a
+    >
 
-  <!-- Page Header -->
-  <section class="page-header">
-    <h1>Events & News</h1>
-    <p>Catch up on what’s happening at FNYDI — workshops, exhibitions, and announcements.</p>
-  </section>
+    <!-- Page Header -->
+    <section class="page-header">
+      <h1>Events & News</h1>
+      <p>
+        Catch up on what’s happening at FNYDI — workshops, exhibitions, and
+        announcements.
+      </p>
+    </section>
 
-  <!-- Tab Buttons -->
-  <section class="tab-buttons" style="text-align: center;">
-    <button onclick="showTab('eventsTab')">Events</button>
-    <button onclick="showTab('newsTab')">News</button>
-    <button onclick="showTab('announcementsTab')">Announcements</button>
-  </section>
+    <!-- Tab Buttons -->
+    <section class="tab-buttons" style="text-align: center">
+      <button onclick="showTab('eventsTab')">Events</button>
+      <button onclick="showTab('newsTab')">News</button>
+      <button onclick="showTab('announcementsTab')">Announcements</button>
+    </section>
 
-  <!-- Tabs Content -->
-  <section class="tab-section">
-    <div id="eventsTab" class="tab-content">
-      <h2>📅 Upcoming Events</h2>
-      <ul>
-        <li><strong>July 28, 2025:</strong> Cisco Cloud Fundamentals Bootcamp</li>
-        <li><strong>Aug 14–16, 2025:</strong> Rural Coding Challenge — Vhembe</li>
-      </ul>
+    <!-- Tabs Content -->
+    <section class="tab-section">
+      <div id="eventsTab" class="tab-content">
+        <h2>📅 Upcoming Events</h2>
+        <ul></ul>
 
-      <h3>🕑 Past Events</h3>
-      <ul>
-        <li>✅ Digital Career Day – NEMISA Lab (May 2025)</li>
-        <li>✅ Youth Innovation Fair – Makhado Stadium (March 2025)</li>
-      </ul>
-    </div>
+        <h3>🕑 Past Events</h3>
+        <ul></ul>
+      </div>
 
-    <div id="newsTab" class="tab-content" style="display: none;">
-      <h2>📰 In the News</h2>
-      <ul>
-        <li>“FNYDI Launches Cisco Cohort #5” – <em>Community Tech Weekly</em></li>
-        <li>“How Arts Mentorships Are Changing Lives” – <em>Vhembe Times</em></li>
-      </ul>
-    </div>
+      <div id="newsTab" class="tab-content" style="display: none">
+        <h2>📰 In the News</h2>
+        <ul></ul>
+      </div>
 
-    <div id="announcementsTab" class="tab-content" style="display: none;">
-      <h2>📣 Announcements</h2>
-      <ul>
-        <li>📝 Applications now open for August 2025 intake</li>
-        <li>📌 Office will be closed on National Youth Day (June 16)</li>
-        <li>💻 Portal login credentials emailed to all registered learners</li>
-      </ul>
-    </div>
-  </section>
+      <div id="announcementsTab" class="tab-content" style="display: none">
+        <h2>📣 Announcements</h2>
+        <ul></ul>
+      </div>
+    </section>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <p>Reg No: 012-647-NPO</p>
-    <p>Email: <a href="mailto:fnydii@gmail.com">fnydii@gmail.com</a></p>
-    <p>Address: 97 Krogh Street, Makhado 0920</p>
-    <p>Phone: 083 402 4342 | 072 718 2327</p>
-  </footer>
+    <!-- Footer -->
+    <footer class="footer">
+      <p>Reg No: 012-647-NPO</p>
+      <p>Email: <a href="mailto:fnydii@gmail.com">fnydii@gmail.com</a></p>
+      <p>Address: 97 Krogh Street, Makhado 0920</p>
+      <p>Phone: 083 402 4342 | 072 718 2327</p>
+    </footer>
 
-  <script src="js/main.js"></script>
-</body>
+    <script src="js/main.js"></script>
+  </body>
 </html>
