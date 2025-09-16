@@ -1,4 +1,21 @@
-/* Netlify DB Post Styles */
+/*
+  ==========================================================================
+  Netlify DB Post Styles
+  ==========================================================================
+  This stylesheet provides the styles for the blog/news posts that are
+  dynamically loaded from Netlify Database via the `NetlifyDB` class in
+  `js/main.js`.
+
+  It includes styles for:
+  - The main container for the grid of posts (`.posts-container`).
+  - Individual post preview cards (`.post-card`).
+  - The detailed view of a single post (`.post-full`).
+  - Loading, error, and "no posts" messages.
+  - Responsive adjustments for smaller screens.
+  ==========================================================================
+*/
+
+/* Styles for the grid of post cards */
 .posts-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -6,6 +23,7 @@
   margin: 2rem 0;
 }
 
+/* Individual post card styles */
 .post-card {
   background: white;
   border-radius: 8px;
@@ -33,6 +51,7 @@
   margin-bottom: 1rem;
 }
 
+/* Meta information like date and category */
 .post-meta {
   display: flex;
   gap: 1rem;
@@ -55,6 +74,7 @@
   color: var(--neutral-600);
 }
 
+/* "Read More" link */
 .read-more {
   color: var(--primary-purple);
   text-decoration: none;
@@ -69,6 +89,7 @@
   text-decoration: underline;
 }
 
+/* Styles for the full, detailed view of a single post */
 .post-full {
   max-width: 800px;
   margin: 0 auto;
@@ -90,6 +111,7 @@
   margin-bottom: 1rem;
 }
 
+/* Styles for status messages (loading, error, no posts) */
 .loading,
 .no-posts,
 .error {
@@ -112,7 +134,7 @@
   color: var(--neutral-600);
 }
 
-/* Responsive adjustments */
+/* Responsive adjustments for smaller screens */
 @media (max-width: 768px) {
   .posts-container {
     grid-template-columns: 1fr;

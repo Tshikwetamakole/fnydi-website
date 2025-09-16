@@ -7,7 +7,10 @@
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
-    <!-- Navbar -->
+    <!-- =================================================================
+    HEADER & NAVIGATION
+    This section contains the main navigation bar for the website.
+    ================================================================== -->
     <header class="navbar">
       <div class="nav-container">
         <a href="index.html" class="logo">
@@ -34,7 +37,10 @@
       </div>
     </header>
 
-    <!-- Floating Action Buttons -->
+    <!-- =================================================================
+    FLOATING ACTION BUTTONS
+    Quick access to "Support Us" and WhatsApp.
+    ================================================================== -->
     <a href="get-involved.html#support" class="support-btn">Support Us</a>
     <a
       href="https://wa.me/27834024342"
@@ -45,13 +51,20 @@
       >💬</a
     >
 
-    <!-- Page Header -->
+    <!-- =================================================================
+    PAGE HEADER
+    Title for the Student Portal page.
+    ================================================================== -->
     <section class="page-header">
       <h1>Student Portal</h1>
       <p>Your personalized learning hub.</p>
     </section>
 
-    <!-- Login Section -->
+    <!-- =================================================================
+    LOGIN SECTION
+    A simple login form. The `studentLogin` function in `js/main.js`
+    handles the logic, which is currently a mock login.
+    ================================================================== -->
     <section
       id="loginSection"
       class="program-content"
@@ -71,7 +84,12 @@
       <p id="loginError" style="color: red; margin-top: 1em"></p>
     </section>
 
-    <!-- Portal Dashboard -->
+    <!-- =================================================================
+    PORTAL DASHBOARD
+    This section is hidden by default and shown by the `studentLogin`
+    function upon successful login. It contains links to student-specific
+    resources.
+    ================================================================== -->
     <section id="portalDashboard" class="program-content" style="display: none">
       <h2>📄 My Certificates</h2>
       <ul>
@@ -110,7 +128,10 @@
       <button onclick="logoutStudent()">🔓 Logout</button>
     </section>
 
-    <!-- Footer -->
+    <!-- =================================================================
+    FOOTER
+    Contains contact information and other essential details.
+    ================================================================== -->
     <footer class="footer">
       <p>Reg No: 012-647-NPO</p>
       <p>Email: <a href="mailto:fnydii@gmail.com">fnydii@gmail.com</a></p>
@@ -118,6 +139,10 @@
       <p>Phone: 083 402 4342 | 072 718 2327</p>
     </footer>
 
+    <!-- =================================================================
+    SCRIPTS
+    Main JavaScript file for site-wide interactivity.
+    ================================================================== -->
     <script src="js/main.js"></script>
   </body>
 </html>
