@@ -1,4 +1,63 @@
-/* === CSS CUSTOM PROPERTIES (DESIGN SYSTEM) === */
+/*
+  ==========================================================================
+  FNYDI Website Stylesheet
+  ==========================================================================
+  This file contains the primary styles for the Far North Youth Development
+  Initiative website. It is organized into the following sections:
+
+  1. CSS CUSTOM PROPERTIES (DESIGN SYSTEM)
+     - Defines the color palette, typography, spacing, and other core
+       design tokens for the entire site.
+
+  2. BASE RESET & TYPOGRAPHY
+     - A simple reset for consistent styling across browsers.
+     - Base styles for body, headings, paragraphs, and links.
+
+  3. LAYOUT UTILITIES
+     - Helper classes like `.container` and `.text-center`.
+
+  4. NAVIGATION
+     - Styles for the main navbar, including the logo, links, dropdown menu,
+       and hamburger menu for mobile.
+
+  5. HERO SECTION
+     - Styles for the main landing page hero banner.
+
+  6. PAGE HEADER
+     - Styles for the header section on interior pages.
+
+  7. PROGRAM CONTENT & SHARED COMPONENTS
+     - General styles for content sections, partner logos, blockquotes,
+       and call-to-action buttons.
+
+  8. CONTACT STYLES
+     - Styles for the contact form and details grid.
+
+  9. FLOATING ACTION BUTTONS
+     - Styles for the "Support Us" and WhatsApp floating buttons.
+
+  10. FOOTER
+      - Styles for the website footer.
+
+  11. RESPONSIVE DESIGN
+      - Media queries to handle different screen sizes, ensuring the
+        site is mobile-friendly.
+
+  12. ACCESSIBILITY
+      - Styles for reduced motion, focus states, and high contrast mode.
+
+  13. PAGE-SPECIFIC STYLES
+      - Styles that are specific to certain pages like "Digital Skills".
+
+  14. UTILITY CLASSES
+      - Helper classes for animations and accessibility (e.g., .sr-only).
+  ==========================================================================
+*/
+
+
+/* ==========================================================================
+   1. CSS CUSTOM PROPERTIES (DESIGN SYSTEM)
+   ========================================================================== */
 :root {
   /* Colors - Updated to match logo palette */
   --primary-orange: #ff6b35;
@@ -34,6 +93,14 @@
   --neutral-700: #495057;
   --neutral-800: #343a40;
   --neutral-900: #212529;
+
+  --primary-green: #22c55e;
+  --dark-green: #16a34a;
+  --light-green: #dcfce7;
+
+  --primary-yellow: #eab308;
+  --dark-yellow: #ca8a04;
+  --light-yellow: #fef3c7;
 
   /* Typography */
   --font-primary: "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto",
@@ -87,7 +154,9 @@
   --transition-slow: 350ms ease-in-out;
 }
 
-/* === BASE RESET & TYPOGRAPHY === */
+/* ==========================================================================
+   2. BASE RESET & TYPOGRAPHY
+   ========================================================================== */
 * {
   margin: 0;
   padding: 0;
@@ -121,24 +190,12 @@ h6 {
   color: var(--neutral-900);
 }
 
-h1 {
-  font-size: var(--text-4xl);
-}
-h2 {
-  font-size: var(--text-3xl);
-}
-h3 {
-  font-size: var(--text-2xl);
-}
-h4 {
-  font-size: var(--text-xl);
-}
-h5 {
-  font-size: var(--text-lg);
-}
-h6 {
-  font-size: var(--text-base);
-}
+h1 { font-size: var(--text-4xl); }
+h2 { font-size: var(--text-3xl); }
+h3 { font-size: var(--text-2xl); }
+h4 { font-size: var(--text-xl); }
+h5 { font-size: var(--text-lg); }
+h6 { font-size: var(--text-base); }
 
 p {
   margin-bottom: var(--space-4);
@@ -156,7 +213,9 @@ a:hover {
   text-decoration: underline;
 }
 
-/* === LAYOUT UTILITIES === */
+/* ==========================================================================
+   3. LAYOUT UTILITIES
+   ========================================================================== */
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -167,17 +226,13 @@ a:hover {
   padding: var(--space-16) 0;
 }
 
-.text-center {
-  text-align: center;
-}
-.text-left {
-  text-align: left;
-}
-.text-right {
-  text-align: right;
-}
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
 
-/* === NAVIGATION === */
+/* ==========================================================================
+   4. NAVIGATION
+   ========================================================================== */
 .navbar {
   background-color: var(--primary-purple);
   position: sticky;
@@ -306,17 +361,13 @@ a:hover {
 }
 
 @keyframes fadeInDown {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-/* === HERO SECTION === */
+/* ==========================================================================
+   5. HERO SECTION
+   ========================================================================== */
 .hero {
   background: linear-gradient(
       135deg,
@@ -383,7 +434,9 @@ a:hover {
   color: var(--primary-purple);
 }
 
-/* === PAGE HEADER === */
+/* ==========================================================================
+   6. PAGE HEADER
+   ========================================================================== */
 .page-header {
   background: linear-gradient(
     135deg,
@@ -408,7 +461,9 @@ a:hover {
   margin: 0 auto;
 }
 
-/* === PROGRAM CONTENT === */
+/* ==========================================================================
+   7. PROGRAM CONTENT & SHARED COMPONENTS
+   ========================================================================== */
 .program-content {
   max-width: 800px;
   margin: 0 auto;
@@ -518,7 +573,9 @@ blockquote span {
   background: var(--dark-red);
 }
 
-/* === CONTACT STYLES === */
+/* ==========================================================================
+   8. CONTACT STYLES
+   ========================================================================== */
 .contact-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -597,7 +654,9 @@ blockquote span {
   margin-top: var(--space-6);
 }
 
-/* === FLOATING ACTION BUTTONS === */
+/* ==========================================================================
+   9. FLOATING ACTION BUTTONS
+   ========================================================================== */
 .support-btn {
   position: fixed;
   bottom: var(--space-6);
@@ -651,18 +710,14 @@ blockquote span {
 }
 
 @keyframes pulse {
-  0% {
-    box-shadow: 0 0 0 0 rgba(230, 57, 70, 0.7);
-  }
-  70% {
-    box-shadow: 0 0 0 10px rgba(230, 57, 70, 0);
-  }
-  100% {
-    box-shadow: 0 0 0 0 rgba(230, 57, 70, 0);
-  }
+  0% { box-shadow: 0 0 0 0 rgba(230, 57, 70, 0.7); }
+  70% { box-shadow: 0 0 0 10px rgba(230, 57, 70, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(230, 57, 70, 0); }
 }
 
-/* === FOOTER === */
+/* ==========================================================================
+   10. FOOTER
+   ========================================================================== */
 .footer {
   background: var(--dark-grey);
   color: var(--neutral-300);
@@ -684,7 +739,9 @@ blockquote span {
   color: var(--neutral-100);
 }
 
-/* === RESPONSIVE DESIGN === */
+/* ==========================================================================
+   11. RESPONSIVE DESIGN
+   ========================================================================== */
 @media (max-width: 768px) {
   /* Navigation */
   .hamburger {
@@ -709,14 +766,8 @@ blockquote span {
   }
 
   @keyframes slideDown {
-    from {
-      opacity: 0;
-      transform: translateY(-20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
   }
 
   .nav-links a,
@@ -789,7 +840,7 @@ blockquote span {
     font-size: var(--text-lg);
   }
 
-  /* Typography */
+  /* Typography & Layout */
   .program-content {
     padding: var(--space-12) var(--space-4);
   }
@@ -818,7 +869,9 @@ blockquote span {
   }
 }
 
-/* === ACCESSIBILITY === */
+/* ==========================================================================
+   12. ACCESSIBILITY
+   ========================================================================== */
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: 0.01ms !important;
@@ -845,9 +898,9 @@ textarea:focus {
   }
 }
 
-/* === DIGITAL SKILLS PAGE STYLES === */
-
-/* Program Overview Section */
+/* ==========================================================================
+   13. PAGE-SPECIFIC STYLES (Digital Skills Page)
+   ========================================================================== */
 .program-overview {
   background: var(--neutral-200);
   padding: var(--space-16) 0;
@@ -898,7 +951,6 @@ textarea:focus {
   font-weight: 600;
 }
 
-/* Courses Section */
 .courses-section {
   padding: var(--space-20) 0;
 }
@@ -981,20 +1033,9 @@ textarea:focus {
   letter-spacing: 0.5px;
 }
 
-.tag.beginner {
-  background: var(--light-green);
-  color: var(--dark-green);
-}
-
-.tag.intermediate {
-  background: var(--light-yellow);
-  color: var(--dark-yellow);
-}
-
-.tag.advanced {
-  background: var(--light-red);
-  color: var(--dark-red);
-}
+.tag.beginner { background: var(--light-green); color: var(--dark-green); }
+.tag.intermediate { background: var(--light-yellow); color: var(--dark-yellow); }
+.tag.advanced { background: var(--light-red); color: var(--dark-red); }
 
 .duration {
   color: var(--neutral-600);
@@ -1039,22 +1080,15 @@ textarea:focus {
   text-decoration: none;
 }
 
-/* Partners Section */
 .partners-section {
   background: var(--neutral-200);
   padding: var(--space-16) 0;
 }
 
-.partners-section h2 {
+.partners-section h2, .partners-section p {
   text-align: center;
   color: var(--primary-purple);
   margin-bottom: var(--space-4);
-}
-
-.partners-section p {
-  text-align: center;
-  color: var(--neutral-600);
-  margin-bottom: var(--space-12);
 }
 
 .partners-grid {
@@ -1101,7 +1135,6 @@ textarea:focus {
   font-size: var(--text-sm);
 }
 
-/* CTA Section */
 .cta-section {
   background: linear-gradient(135deg, var(--primary-purple), var(--primary-orange));
   color: var(--neutral-100);
@@ -1109,26 +1142,10 @@ textarea:focus {
   text-align: center;
 }
 
-.cta-section h2 {
-  color: var(--neutral-100);
-  margin-bottom: var(--space-4);
-}
+.cta-section h2 { color: var(--neutral-100); margin-bottom: var(--space-4); }
+.cta-section p { color: rgba(255, 255, 255, 0.9); margin-bottom: var(--space-8); font-size: var(--text-lg); }
 
-.cta-section p {
-  color: rgba(255, 255, 255, 0.9);
-  margin-bottom: var(--space-8);
-  font-size: var(--text-lg);
-}
-
-.cta-buttons {
-  display: flex;
-  gap: var(--space-4);
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.btn-primary,
-.btn-secondary {
+.btn-primary, .btn-secondary {
   padding: var(--space-4) var(--space-8);
   border-radius: var(--radius-xl);
   font-weight: 600;
@@ -1136,68 +1153,22 @@ textarea:focus {
   transition: all var(--transition-normal);
 }
 
-.btn-primary {
-  background: var(--primary-orange);
-  color: var(--neutral-100);
-}
+.btn-primary { background: var(--primary-orange); color: var(--neutral-100); }
+.btn-primary:hover { background: var(--secondary-orange); transform: translateY(-2px); text-decoration: none; }
 
-.btn-primary:hover {
-  background: var(--secondary-orange);
-  transform: translateY(-2px);
-  text-decoration: none;
-}
-
-.btn-secondary {
-  background: transparent;
-  color: var(--neutral-100);
-  border: 2px solid var(--neutral-100);
-}
-
-.btn-secondary:hover {
-  background: var(--neutral-100);
-  color: var(--primary-purple);
-  text-decoration: none;
-}
-
-/* Additional CSS Variables */
-:root {
-  --primary-green: #22c55e;
-  --dark-green: #16a34a;
-  --light-green: #dcfce7;
-  
-  --primary-yellow: #eab308;
-  --dark-yellow: #ca8a04;
-  --light-yellow: #fef3c7;
-}
+.btn-secondary { background: transparent; color: var(--neutral-100); border: 2px solid var(--neutral-100); }
+.btn-secondary:hover { background: var(--neutral-100); color: var(--primary-purple); text-decoration: none; }
 
 /* Responsive Design for Courses */
 @media (max-width: 768px) {
-  .courses-grid {
+  .courses-grid, .stats-grid, .partners-grid {
     grid-template-columns: 1fr;
     gap: var(--space-6);
   }
   
-  .course-card {
-    margin: 0 var(--space-4);
-  }
+  .course-card { margin: 0 var(--space-4); }
   
-  .stats-grid {
-    grid-template-columns: 1fr;
-    gap: var(--space-4);
-  }
-  
-  .partners-grid {
-    grid-template-columns: 1fr;
-    gap: var(--space-4);
-  }
-  
-  .cta-buttons {
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .btn-primary,
-  .btn-secondary {
+  .btn-primary, .btn-secondary {
     width: 100%;
     max-width: 300px;
     text-align: center;
@@ -1205,22 +1176,14 @@ textarea:focus {
 }
 
 @media (max-width: 480px) {
-  .courses-section {
-    padding: var(--space-12) 0;
-  }
-  
-  .course-content {
-    padding: var(--space-4);
-  }
-  
-  .course-footer {
-    flex-direction: column;
-    gap: var(--space-4);
-    align-items: stretch;
-  }
+  .courses-section { padding: var(--space-12) 0; }
+  .course-content { padding: var(--space-4); }
+  .course-footer { flex-direction: column; gap: var(--space-4); align-items: stretch; }
 }
 
-/* === UTILITY CLASSES === */
+/* ==========================================================================
+   14. UTILITY CLASSES
+   ========================================================================== */
 .sr-only {
   position: absolute;
   width: 1px;
@@ -1238,12 +1201,111 @@ textarea:focus {
 }
 
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Added for refactoring inline styles */
+.hidden {
+  display: none;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.d-block {
+  display: block;
+}
+
+.mb-1em {
+  margin-bottom: 1em;
+}
+
+.mb-4 { margin-bottom: var(--space-4); } /* 1rem */
+.mt-4 { margin-top: var(--space-4); } /* 1rem */
+.mt-8 { margin-top: var(--space-8); } /* 2rem */
+.mt-20 { margin-top: 20px; }
+.py-16 { padding-top: var(--space-16); padding-bottom: var(--space-16); }
+
+.max-w-300 { max-width: 300px; }
+.max-w-500 { max-width: 500px; }
+
+.text-danger {
+  color: var(--primary-red);
+}
+
+.form-response-success {
+  color: #155724;
+  background-color: #d4edda;
+  padding: 1rem;
+  border-left: 4px solid #28a745;
+  border-radius: 5px;
+}
+
+.form-response-error {
+  color: #721c24;
+  background-color: #f8d7da;
+  padding: 1rem;
+  border-left: 4px solid #dc3545;
+  border-radius: 5px;
+}
+
+/* Button utility classes */
+.btn {
+  padding: 15px 30px;
+  border-radius: 30px;
+  text-decoration: none;
+  margin: 0 10px;
+  display: inline-block;
+  font-weight: 600;
+  transition: all var(--transition-normal);
+}
+
+.btn-light {
+  background: white;
+  color: #667eea;
+}
+.btn-light:hover {
+  background: var(--neutral-200);
+  color: #667eea;
+  text-decoration: none;
+}
+
+/* Background Colors */
+.bg-neutral-200 {
+  background-color: var(--neutral-200);
+}
+
+/* Program Preview Section */
+.programs-preview {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-8);
+  margin-top: var(--space-12);
+}
+
+.program-card {
+  background: var(--neutral-100);
+  padding: var(--space-8);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+  text-align: center;
+}
+
+.program-card-icon {
+  font-size: var(--text-5xl);
+  margin-bottom: var(--space-4);
+}
+
+.btn-outline-light {
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+}
+.btn-outline-light:hover {
+  background: white;
+  color: #667eea;
+  text-decoration: none;
 }

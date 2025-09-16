@@ -103,7 +103,10 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-// Lightbox functionality
+/**
+ * Opens a lightbox to display a larger version of an image.
+ * @param {HTMLImageElement} img - The image element that was clicked.
+ */
 function openLightbox(img) {
   const lightbox = document.getElementById("lightbox");
   const lightboxImg = document.getElementById("lightbox-img");
@@ -128,6 +131,9 @@ function openLightbox(img) {
   }
 }
 
+/**
+ * Closes the lightbox and restores scrolling to the body.
+ */
 function closeLightbox() {
   const lightbox = document.getElementById("lightbox");
   if (lightbox) {
@@ -149,7 +155,12 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
-// Performance optimization: Debounce scroll events
+/**
+ * Creates a debounced function that delays invoking `func` until after `wait` milliseconds have elapsed since the last time the debounced function was invoked.
+ * @param {Function} func - The function to debounce.
+ * @param {number} wait - The number of milliseconds to delay.
+ * @returns {Function} Returns the new debounced function.
+ */
 function debounce(func, wait) {
   let timeout;
   return function executedFunction(...args) {
@@ -165,12 +176,22 @@ function debounce(func, wait) {
 const debouncedScrollHandler = debounce(function () {}, 10);
 window.addEventListener("scroll", debouncedScrollHandler);
 
-// Netlify Database API Functions
+/**
+ * A class to interact with the Netlify Database API.
+ */
 class NetlifyDB {
+  /**
+   * Initializes the NetlifyDB class.
+   */
   constructor() {
     this.baseUrl = window.location.origin;
   }
 
+  /**
+   * Fetches a single post by its ID.
+   * @param {string} postId - The ID of the post to fetch.
+   * @returns {Promise<Object>} A promise that resolves to the post data.
+   */
   async getPost(postId) {
     try {
       const response = await fetch(`/.netlify/functions/get-post?id=${postId}`);
@@ -192,6 +213,14 @@ class NetlifyDB {
     }
   }
 
+  /**
+   * Fetches a list of posts with optional filtering and pagination.
+   * @param {Object} [options={}] - The options for fetching posts.
+   * @param {number} [options.limit] - The maximum number of posts to return.
+   * @param {number} [options.offset] - The number of posts to skip.
+   * @param {string} [options.category] - The category to filter posts by.
+   * @returns {Promise<{posts: Array<Object>, pagination: Object}>} A promise that resolves to an object containing the posts and pagination info.
+   */
   async getPosts(options = {}) {
     try {
       const params = new URLSearchParams();
@@ -222,7 +251,11 @@ class NetlifyDB {
     }
   }
 
-  // Utility function to display posts in the UI
+  /**
+   * Displays a list of posts in the UI.
+   * @param {string} containerSelector - The CSS selector for the container element.
+   * @param {Object} [options={}] - The options for fetching posts.
+   */
   async displayPosts(containerSelector, options = {}) {
     const container = document.querySelector(containerSelector);
     if (!container) return;
@@ -263,6 +296,11 @@ class NetlifyDB {
     }
   }
 
+  /**
+   * Displays a single post in the UI.
+   * @param {string} postId - The ID of the post to display.
+   * @param {string} [containerSelector='.post-detail'] - The CSS selector for the container element.
+   */
   async displaySinglePost(postId, containerSelector = '.post-detail') {
     const container = document.querySelector(containerSelector);
     if (!container) return;
@@ -302,7 +340,10 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-// Tab functionality for Events & News page
+/**
+ * Shows the specified tab and hides the others.
+ * @param {string} tabName - The ID of the tab content to display.
+ */
 function showTab(tabName) {
   const tabContents = document.querySelectorAll(".tab-content");
   tabContents.forEach((content) => {
@@ -327,7 +368,10 @@ function showTab(tabName) {
   }
 }
 
-// Video filtering for Classroom Rewind page
+/**
+ * Filters videos on the Classroom Rewind page based on the selected category.
+ * @param {string} category - The category to filter by. Use 'all' to show all videos.
+ */
 function filterVideos(category) {
   const videos = document.querySelectorAll(".video-card");
 
@@ -352,7 +396,11 @@ function filterVideos(category) {
   }
 }
 
-// Student Portal login functionality
+/**
+ * Handles the student login form submission.
+ * @param {Event} event - The form submission event.
+ * @returns {boolean} Returns false to prevent the default form submission.
+ */
 function studentLogin(event) {
   event.preventDefault();
 
@@ -371,6 +419,9 @@ function studentLogin(event) {
   return false;
 }
 
+/**
+ * Logs the student out and returns to the login screen.
+ */
 function logoutStudent() {
   document.getElementById("loginSection").style.display = "block";
   document.getElementById("portalDashboard").style.display = "none";
@@ -405,10 +456,8 @@ document.addEventListener("DOMContentLoaded", function () {
       })
       .then(response => {
         if (response.ok) {
-          responseBox.innerHTML = `
-            <div style="color: green; background: #e6f9ee; padding: 1rem; border-left: 4px solid green; border-radius: 5px;">
-              <strong>✓ Thank you!</strong><br>Your message was sent successfully.
-            </div>`;
+          responseBox.className = 'form-response-success';
+          responseBox.innerHTML = `<strong>✓ Thank you!</strong><br>Your message was sent successfully.`;
           responseBox.style.display = "block";
           form.reset();
         } else {
@@ -418,10 +467,8 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       })
       .catch(error => {
-        responseBox.innerHTML = `
-          <div style="color: red; background: #ffe6e6; padding: 1rem; border-left: 4px solid red; border-radius: 5px;">
-            <strong>⚠ Error:</strong><br>${error.message}
-          </div>`;
+        responseBox.className = 'form-response-error';
+        responseBox.innerHTML = `<strong>⚠ Error:</strong><br>${error.message}`;
         responseBox.style.display = "block";
       })
       .finally(() => {
