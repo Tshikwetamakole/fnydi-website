@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
+    <link rel="stylesheet" href="css/blog.css">
+
+
     <!-- =================================================================
     EMBEDDED STYLES
     This page contains specific styles for the blog layout, which are
@@ -209,6 +212,7 @@
             }
         }
     </style>
+
 </head>
 <body>
     <!-- =================================================================
@@ -249,9 +253,9 @@
         <div class="container">
             <h1>FNYDI Blog</h1>
             <p>Discover inspiring stories, latest news, and community updates from the Foundation for New Youth Development Initiative</p>
-            <div style="margin-top: 30px;">
-                <a href="#latest-posts" class="btn" style="background: white; color: #667eea; padding: 15px 30px; border-radius: 30px; text-decoration: none; margin: 0 10px;">Latest Posts</a>
-                <a href="#categories" class="btn" style="background: transparent; color: white; border: 2px solid white; padding: 15px 30px; border-radius: 30px; text-decoration: none; margin: 0 10px;">Browse Categories</a>
+            <div class="mt-8">
+                <a href="#latest-posts" class="btn btn-light">Latest Posts</a>
+                <a href="#categories" class="btn btn-outline-light">Browse Categories</a>
             </div>
         </div>
     </section>
@@ -262,7 +266,8 @@
     NOTE: This section is currently static. The NetlifyDB class in js/main.js
     is intended to dynamically load this content.
     ================================================================== -->
-    <main class="container" style="padding: 40px 20px;">
+    <main class="container py-16">
+
         
         <!-- Featured Post -->
         <section class="featured-post">
@@ -276,10 +281,10 @@
                         <i class="fas fa-clock"></i> 5 min read
                     </div>
                     <p>How our mobile digital labs are transforming communities across Limpopo province, bringing technology education to over 2,000 students in remote areas...</p>
-                    <a href="#" class="read-more" style="color: white; font-weight: bold;">Read Full Story →</a>
+                    <a href="#" class="read-more text-white font-bold">Read Full Story →</a>
                 </div>
                 <div class="col-md-4">
-                    <div style="background: url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3') center/cover; height: 200px; border-radius: 10px;"></div>
+                    <div class="featured-post-image" style="background-image: url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3')"></div>
                 </div>
             </div>
         </section>
@@ -350,9 +355,14 @@
                 <!-- Tags -->
                 <div class="sidebar">
                     <h3>Popular Tags</h3>
-                    <div style="display: flex; flex-wrap: wrap; gap: 5px;">
-                        <span style="background: #667eea; color: white; padding: 5px 10px; border-radius: 15px; font-size: 0.8em;">#YouthEmpowerment</span>
-                        <!-- More tags... -->
+
+                    <div class="tag-container">
+                        <span class="tag-item">#YouthEmpowerment</span>
+                        <span class="tag-item">#DigitalSkills</span>
+                        <span class="tag-item">#Community</span>
+                        <span class="tag-item">#Education</span>
+                        <span class="tag-item">#Innovation</span>
+
                     </div>
                 </div>
             </div>
@@ -369,12 +379,15 @@
         </section>
 
         <!-- Upcoming Events Section -->
-        <section style="margin: 60px 0;">
+
+        <section class="my-60">
+
             <h2>Upcoming Events</h2>
             <div class="row">
                 <!-- Example Event -->
                 <div class="col-md-6">
-                    <div style="background: white; padding: 30px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); margin-bottom: 20.px;">
+                  <div class="event-card">
+
                         <h4>Digital Marketing Workshop</h4>
                         <p><i class="fas fa-calendar"></i> March 25, 2024 | <i class="fas fa-clock"></i> 2:00 PM</p>
                         <p>Learn essential digital marketing skills for small businesses and entrepreneurs.</p>
@@ -383,7 +396,7 @@
                 </div>
                 <!-- Another Example Event -->
                 <div class="col-md-6">
-                    <div style="background: white; padding: 30px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); margin-bottom: 20px;">
+                    <div class="event-card">
                         <h4>Youth Leadership Summit</h4>
                         <p><i class="fas fa-calendar"></i> April 5, 2024 | <i class="fas fa-clock"></i> 9:00 AM</p>
                         <p>A full-day summit focused on developing leadership skills among young people.</p>

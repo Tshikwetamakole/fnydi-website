@@ -67,8 +67,7 @@
     ================================================================== -->
     <section
       id="loginSection"
-      class="program-content"
-      style="max-width: 500px; margin: auto"
+      class="program-content max-w-500 mx-auto"
     >
       <h2>🔐 Login</h2>
       <form onsubmit="return studentLogin(event)">
@@ -81,7 +80,7 @@
         />
         <button type="submit">Access Portal</button>
       </form>
-      <p id="loginError" style="color: red; margin-top: 1em"></p>
+      <p id="loginError" class="text-danger mt-4"></p>
     </section>
 
     <!-- =================================================================
@@ -90,7 +89,8 @@
     function upon successful login. It contains links to student-specific
     resources.
     ================================================================== -->
-    <section id="portalDashboard" class="program-content" style="display: none">
+    <section id="portalDashboard" class="program-content hidden">
+
       <h2>📄 My Certificates</h2>
       <ul>
         <li>

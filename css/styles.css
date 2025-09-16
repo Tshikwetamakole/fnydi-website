@@ -1203,4 +1203,110 @@ textarea:focus {
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
+
+}
+
+/* Added for refactoring inline styles */
+.hidden {
+  display: none;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.d-block {
+  display: block;
+}
+
+.mb-1em {
+  margin-bottom: 1em;
+}
+
+.mb-4 { margin-bottom: var(--space-4); } /* 1rem */
+.mt-4 { margin-top: var(--space-4); } /* 1rem */
+.mt-8 { margin-top: var(--space-8); } /* 2rem */
+.mt-20 { margin-top: 20px; }
+.py-16 { padding-top: var(--space-16); padding-bottom: var(--space-16); }
+
+.max-w-300 { max-width: 300px; }
+.max-w-500 { max-width: 500px; }
+
+.text-danger {
+  color: var(--primary-red);
+}
+
+.form-response-success {
+  color: #155724;
+  background-color: #d4edda;
+  padding: 1rem;
+  border-left: 4px solid #28a745;
+  border-radius: 5px;
+}
+
+.form-response-error {
+  color: #721c24;
+  background-color: #f8d7da;
+  padding: 1rem;
+  border-left: 4px solid #dc3545;
+  border-radius: 5px;
+}
+
+/* Button utility classes */
+.btn {
+  padding: 15px 30px;
+  border-radius: 30px;
+  text-decoration: none;
+  margin: 0 10px;
+  display: inline-block;
+  font-weight: 600;
+  transition: all var(--transition-normal);
+}
+
+.btn-light {
+  background: white;
+  color: #667eea;
+}
+.btn-light:hover {
+  background: var(--neutral-200);
+  color: #667eea;
+  text-decoration: none;
+}
+
+/* Background Colors */
+.bg-neutral-200 {
+  background-color: var(--neutral-200);
+}
+
+/* Program Preview Section */
+.programs-preview {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-8);
+  margin-top: var(--space-12);
+}
+
+.program-card {
+  background: var(--neutral-100);
+  padding: var(--space-8);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+  text-align: center;
+}
+
+.program-card-icon {
+  font-size: var(--text-5xl);
+  margin-bottom: var(--space-4);
+}
+
+.btn-outline-light {
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+}
+.btn-outline-light:hover {
+  background: white;
+  color: #667eea;
+  text-decoration: none;
 }

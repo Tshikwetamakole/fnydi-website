@@ -456,10 +456,8 @@ document.addEventListener("DOMContentLoaded", function () {
       })
       .then(response => {
         if (response.ok) {
-          responseBox.innerHTML = `
-            <div style="color: green; background: #e6f9ee; padding: 1rem; border-left: 4px solid green; border-radius: 5px;">
-              <strong>✓ Thank you!</strong><br>Your message was sent successfully.
-            </div>`;
+          responseBox.className = 'form-response-success';
+          responseBox.innerHTML = `<strong>✓ Thank you!</strong><br>Your message was sent successfully.`;
           responseBox.style.display = "block";
           form.reset();
         } else {
@@ -469,10 +467,8 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       })
       .catch(error => {
-        responseBox.innerHTML = `
-          <div style="color: red; background: #ffe6e6; padding: 1rem; border-left: 4px solid red; border-radius: 5px;">
-            <strong>⚠ Error:</strong><br>${error.message}
-          </div>`;
+        responseBox.className = 'form-response-error';
+        responseBox.textContent = `⚠ Error: ${error.message}`;
         responseBox.style.display = "block";
       })
       .finally(() => {
