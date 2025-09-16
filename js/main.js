@@ -468,7 +468,7 @@ document.addEventListener("DOMContentLoaded", function () {
       })
       .catch(error => {
         responseBox.className = 'form-response-error';
-        responseBox.innerHTML = `<strong>⚠ Error:</strong><br>${error.message}`;
+        responseBox.textContent = `⚠ Error: ${error.message}`;
         responseBox.style.display = "block";
       })
       .finally(() => {
