@@ -6,7 +6,213 @@
     <title>FNYDI Blog | News, Events & Stories</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
     <link rel="stylesheet" href="css/blog.css">
+
+
+    <!-- =================================================================
+    EMBEDDED STYLES
+    This page contains specific styles for the blog layout, which are
+    included directly in the HTML. This is different from other pages
+    that rely solely on the external `styles.css` file.
+    ================================================================== -->
+    <style>
+        /* Additional blog-specific styles */
+        .blog-hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .blog-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        
+        .blog-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .blog-image {
+            width: 100%;
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .blog-content {
+            padding: 25px;
+        }
+        
+        .blog-meta {
+            display: flex;
+            justify-content: space-between;
+            color: #666;
+            font-size: 0.9em;
+            margin-bottom: 15px;
+        }
+        
+        .blog-category {
+            background: #667eea;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8em;
+        }
+        
+        .blog-excerpt {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        
+        .read-more {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .sidebar {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .search-box {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 25px;
+            margin-bottom: 20px;
+        }
+        
+        .category-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .category-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .category-list a {
+            color: #333;
+            text-decoration: none;
+        }
+        
+        .category-list a:hover {
+            color: #667eea;
+        }
+        
+        .newsletter {
+            background: #667eea;
+            color: white;
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            margin: 40px 0;
+        }
+        
+        .newsletter-form {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+            justify-content: center;
+        }
+        
+        .newsletter-form input {
+            padding: 12px;
+            border: none;
+            border-radius: 25px;
+            flex: 1;
+            max-width: 300px;
+        }
+        
+        .newsletter-form button {
+            padding: 12px 25px;
+            background: #764ba2;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+        }
+        
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 40px 0;
+        }
+        
+        .pagination a {
+            padding: 10px 15px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        
+        .pagination a.active {
+            background: #764ba2;
+        }
+        
+        .featured-post {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 -15px;
+        }
+        
+        .col-md-8 {
+            flex: 0 0 66.666667%;
+            max-width: 66.666667%;
+            padding: 0 15px;
+        }
+        
+        .col-md-4 {
+            flex: 0 0 33.333333%;
+            max-width: 33.333333%;
+            padding: 0 15px;
+        }
+        
+        @media (max-width: 768px) {
+            .col-md-8, .col-md-4 {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+            
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+
 </head>
 <body>
     <!-- =================================================================
@@ -61,6 +267,7 @@
     is intended to dynamically load this content.
     ================================================================== -->
     <main class="container py-16">
+
         
         <!-- Featured Post -->
         <section class="featured-post">
@@ -148,12 +355,14 @@
                 <!-- Tags -->
                 <div class="sidebar">
                     <h3>Popular Tags</h3>
+
                     <div class="tag-container">
                         <span class="tag-item">#YouthEmpowerment</span>
                         <span class="tag-item">#DigitalSkills</span>
                         <span class="tag-item">#Community</span>
                         <span class="tag-item">#Education</span>
                         <span class="tag-item">#Innovation</span>
+
                     </div>
                 </div>
             </div>
@@ -170,12 +379,15 @@
         </section>
 
         <!-- Upcoming Events Section -->
+
         <section class="my-60">
+
             <h2>Upcoming Events</h2>
             <div class="row">
                 <!-- Example Event -->
                 <div class="col-md-6">
-                    <div class="event-card">
+                  <div class="event-card">
+
                         <h4>Digital Marketing Workshop</h4>
                         <p><i class="fas fa-calendar"></i> March 25, 2024 | <i class="fas fa-clock"></i> 2:00 PM</p>
                         <p>Learn essential digital marketing skills for small businesses and entrepreneurs.</p>
