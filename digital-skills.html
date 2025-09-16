@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<htmltyyyyy lang="en">
+<html lang="en">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -18,35 +18,70 @@
     <!-- Skip to main content link for accessibility -->
     <a href="#main-content" class="sr-only">Skip to main content</a>
 
-    <!-- Navbar -->
+    <!-- =================================================================
+    HEADER & NAVIGATION
+    This section contains the main navigation bar for the website.
+    ================================================================== -->
     <header class="navbar">
         <div class="nav-container">
             <a href="index.html" class="logo">
                 <img src="assets/logos/logo.png" alt="FNYDI Logo" width="150" height="45" />
             </a>
-<button class="hamburger" id="hamburger">&#9776;</button>
-        <nav class="nav-links" id="nav-links">
-          <a href="index.html">Home</a>
-          <a href="about.html">About</a>
-          <div class="dropdown">
-            <button class="dropbtn">Programs ▾</button>
-            <div class="dropdown-content">
-              <a href="digital-skills.html">Digital Skills</a>
-              <a href="arts-culture.html">Arts & Culture</a>
-              <a href="epwp-projects.html">Community Projects</a>
-            </div>
-          </div>
-          <a href="get-involved.html">Get Involved</a>
-          <a href="contact.html">Contact</a>
-        </nav>
+            <button class="hamburger" id="hamburger">&#9776;</button>
+            <nav class="nav-links" id="nav-links">
+              <a href="index.html">Home</a>
+              <a href="about.html">About</a>
+              <div class="dropdown">
+                <button class="dropbtn">Programs ▾</button>
+                <div class="dropdown-content">
+                  <a href="digital-skills.html">Digital Skills</a>
+                  <a href="arts-culture.html">Arts & Culture</a>
+                  <a href="epwp-projects.html">Community Projects</a>
+                </div>
+              </div>
+              <a href="get-involved.html">Get Involved</a>
+              <a href="contact.html">Contact</a>
+            </nav>
+        </div>
     </header>
 
-    <!-- Floating Action Buttons -->
+    <!-- =================================================================
+    FLOATING ACTION BUTTONS
+    Quick access to "Support Us" and WhatsApp.
+    ================================================================== -->
     <a href="get-involved.html#support" class="support-btn" aria-label="Support our programs">Support Us</a>
     <a href="https://wa.me/27834024342" class="whatsapp-btn" target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp">💬</a>
 
+    <main id="main-content">
+        <!-- =================================================================
+        PAGE HEADER
+        Title for the Digital Skills page.
+        ================================================================== -->
+        <section class="page-header">
+            <h1>Digital Skills Development</h1>
+            <p>Free, industry-aligned IT training for underserved youth.</p>
+        </section>
 
-        <!-- Call to Action -->
+        <!-- =================================================================
+        MAIN CONTENT
+        Describes the digital skills program and its offerings.
+        ================================================================== -->
+        <section class="program-content">
+            <h2>Courses We Offer</h2>
+            <p>In partnership with Cisco Networking Academy, NEMISA, and the University of Limpopo, we offer a range of courses designed to prepare youth for careers in the tech industry. Our curriculum includes:</p>
+            <ul>
+                <li>Cybersecurity Essentials</li>
+                <li>IT Essentials</li>
+                <li>Networking Essentials</li>
+                <li>Python Programming</li>
+                <li>Introduction to IoT</li>
+            </ul>
+        </section>
+
+        <!-- =================================================================
+        CALL TO ACTION
+        Encourages users to enroll or contact the organization.
+        ================================================================== -->
         <section class="cta-section">
             <div class="container">
                 <h2>Ready to Start Your Journey?</h2>
@@ -59,7 +94,10 @@
         </section>
     </main>
 
-    <!-- Footer -->
+    <!-- =================================================================
+    FOOTER
+    Contains contact information and other essential details.
+    ================================================================== -->
     <footer class="footer">
         <div class="container">
             <p>Reg No: 012-647-NPO</p>
@@ -69,6 +107,10 @@
         </div>
     </footer>
 
+    <!-- =================================================================
+    SCRIPTS
+    Main JavaScript file for site-wide interactivity.
+    ================================================================== -->
     <script src="js/main.js"></script>
 </body>
 </html>

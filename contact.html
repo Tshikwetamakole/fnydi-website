@@ -7,7 +7,10 @@
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
-    <!-- Navbar -->
+    <!-- =================================================================
+    HEADER & NAVIGATION
+    This section contains the main navigation bar for the website.
+    ================================================================== -->
     <header class="navbar">
       <div class="nav-container">
         <a href="index.html" class="logo">
@@ -31,7 +34,10 @@
       </div>
     </header>
 
-    <!-- Floating Action Buttons -->
+    <!-- =================================================================
+    FLOATING ACTION BUTTONS
+    Quick access to "Support Us" and WhatsApp.
+    ================================================================== -->
     <a href="get-involved.html#support" class="support-btn">Support Us</a>
     <a
       href="https://wa.me/27834024342"
@@ -42,7 +48,10 @@
       >💬</a
     >
 
-    <!-- Page Header -->
+    <!-- =================================================================
+    PAGE HEADER
+    Title for the Contact Us page.
+    ================================================================== -->
     <section class="page-header">
       <h1>Contact Us</h1>
       <p>
@@ -51,23 +60,34 @@
       </p>
     </section>
 
-    <!-- Contact Grid -->
+    <!-- =================================================================
+    MAIN CONTENT
+    A grid containing the contact form and contact details.
+    ================================================================== -->
     <section class="contact-grid">
-      <!-- Contact Form -->
+      <!--
+        CONTACT FORM
+        A form that submits to Formspree for handling submissions.
+        The `js/main.js` file adds AJAX handling for a better user experience.
+      -->
       <div class="contact-form">
         <h2>📧 Send a Message</h2>
         <form action="https://formspree.io/f/xvgqkegn" method="POST" id="contactForm">
-<form action="https://formspree.io/f/yourFormID" method="POST" id="contactForm">
-  <input type="text" name="name" id="contactName" required>
-  <input type="email" name="email" id="contactEmail" required>
-  <textarea name="message" id="contactMessage" required></textarea>
-  <button type="submit">Send</button>
-</form>
+          <label for="contactName">Name</label>
+          <input type="text" name="name" id="contactName" required>
+          <label for="contactEmail">Email</label>
+          <input type="email" name="email" id="contactEmail" required>
+          <label for="contactMessage">Message</label>
+          <textarea name="message" id="contactMessage" required></textarea>
+          <button type="submit">Send</button>
+        </form>
+        <div id="formResponse" style="display:none;"></div>
+      </div>
 
-<div id="formResponse" style="display:none;"></div>
-
-
-      <!-- Contact Details & Map -->
+      <!--
+        CONTACT DETAILS & MAP
+        Displays the physical address, email, phone, and an embedded Google Map.
+      -->
       <div class="contact-details">
         <h2>📍 Visit or Call</h2>
         <p><strong>Address:</strong> 97 Krogh Street, Makhado 0920</p>
@@ -87,7 +107,10 @@
       </div>
     </section>
 
-    <!-- Footer -->
+    <!-- =================================================================
+    FOOTER
+    Contains contact information and other essential details.
+    ================================================================== -->
     <footer class="footer">
       <p>Reg No: 012-647-NPO</p>
       <p>Email: <a href="mailto:fnydii@gmail.com">fnydii@gmail.com</a></p>
@@ -95,6 +118,10 @@
       <p>Phone: 083 402 4342 | 072 718 2327</p>
     </footer>
 
+    <!-- =================================================================
+    SCRIPTS
+    Main JavaScript file for site-wide interactivity.
+    ================================================================== -->
     <script src="js/main.js"></script>
   </body>
 </html>

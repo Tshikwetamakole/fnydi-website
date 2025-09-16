@@ -7,7 +7,10 @@
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
-    <!-- Navbar -->
+    <!-- =================================================================
+    HEADER & NAVIGATION
+    This section contains the main navigation bar for the website.
+    ================================================================== -->
     <header class="navbar">
       <div class="nav-container">
         <a href="index.html" class="logo">
@@ -34,7 +37,10 @@
       </div>
     </header>
 
-    <!-- Floating Action Buttons -->
+    <!-- =================================================================
+    FLOATING ACTION BUTTONS
+    Quick access to "Support Us" and WhatsApp.
+    ================================================================== -->
     <a href="get-involved.html#support" class="support-btn">Support Us</a>
     <a
       href="https://wa.me/27834024342"
@@ -45,13 +51,20 @@
       >💬</a
     >
 
-    <!-- Page Header -->
+    <!-- =================================================================
+    PAGE HEADER
+    Title for the Classroom Rewind page.
+    ================================================================== -->
     <section class="page-header">
       <h1>Classroom Rewind</h1>
       <p>Missed a workshop? Catch up here.</p>
     </section>
 
-    <!-- Filters -->
+    <!-- =================================================================
+    VIDEO FILTERS
+    Buttons that allow users to filter the video grid by category.
+    The `filterVideos` function is in `js/main.js`.
+    ================================================================== -->
     <section class="rewind-filters">
       <div style="text-align: center; margin-bottom: 1em">
         <button onclick="filterVideos('all')">All</button>
@@ -61,7 +74,12 @@
       </div>
     </section>
 
-    <!-- Video Grid -->
+    <!-- =================================================================
+    VIDEO GRID
+    Displays embedded videos from past workshops and events.
+    Each video card has a category class (e.g., 'digital', 'arts')
+    used by the filtering function.
+    ================================================================== -->
     <section class="video-grid" id="videoGrid">
       <div class="video-card digital">
         <h3>Basic Networking Workshop</h3>
@@ -104,7 +122,10 @@
       </div>
     </section>
 
-    <!-- Footer -->
+    <!-- =================================================================
+    FOOTER
+    Contains contact information and other essential details.
+    ================================================================== -->
     <footer class="footer">
       <p>Reg No: 012-647-NPO</p>
       <p>Email: <a href="mailto:fnydii@gmail.com">fnydii@gmail.com</a></p>
@@ -112,6 +133,10 @@
       <p>Phone: 083 402 4342 | 072 718 2327</p>
     </footer>
 
+    <!-- =================================================================
+    SCRIPTS
+    Main JavaScript file for site-wide interactivity.
+    ================================================================== -->
     <script src="js/main.js"></script>
   </body>
 </html>
