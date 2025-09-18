@@ -231,22 +231,15 @@ a:hover {
 .text-right { text-align: right; }
 
 /* Disabled link style used when pages are hidden */
-.disabled-link {
-  color: rgba(255,255,255,0.8);
-  opacity: 0.8;
-  cursor: default;
-  pointer-events: none;
-  padding: 0.5rem 1rem;
-  display: inline-block;
-}
+
 
 /* ==========================================================================
    4. NAVIGATION
    ========================================================================== */
 .navbar {
   background: rgba(106, 76, 147, 0.95);
-  backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
   position: sticky;
   top: 0;
   width: 100%;
@@ -1406,8 +1399,8 @@ button, .btn-primary, .btn-secondary, .cta-buttons a, .hero-buttons a {
   padding: var(--space-4);
   border-radius: var(--radius-full);
   background: linear-gradient(135deg, var(--primary-orange), var(--primary-purple));
-  background-clip: text;
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   transition: all var(--transition-normal);
 }
@@ -1488,6 +1481,25 @@ button, .btn-primary, .btn-secondary, .cta-buttons a, .hero-buttons a {
 .video-card iframe {
   width: 100%;
   border: none;
+}
+
+/* Responsive iframe embed wrapper */
+.embed {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 */
+  height: 0;
+  overflow: hidden;
+}
+.embed iframe,
+.embed object,
+.embed embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
 }
 
 /* Involve Sections */

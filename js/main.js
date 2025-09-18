@@ -5,12 +5,11 @@ document.addEventListener("DOMContentLoaded", function () {
   const navLinks = document.getElementById("nav-links");
 
   if (hamburger && navLinks) {
-    hamburger.addEventListener("click", function () {
-      navLinks.classList.toggle("show");
-      hamburger.setAttribute(
-        "aria-expanded",
-        navLinks.classList.contains("show")
-      );
+    hamburger.addEventListener("click", function (e) {
+      e.stopPropagation();
+      const isOpen = navLinks.classList.toggle("show");
+      hamburger.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      if (isOpen) hamburger.focus();
     });
 
     // Close mobile menu when clicking on a link
@@ -21,11 +20,18 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
 
-    // Close mobile menu when clicking outside
+    // Close mobile menu when clicking outside or pressing Escape
     document.addEventListener("click", function (e) {
       if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
         navLinks.classList.remove("show");
         hamburger.setAttribute("aria-expanded", "false");
+      }
+    });
+    document.addEventListener('keydown', function(e){
+      if (e.key === 'Escape'){
+        navLinks.classList.remove('show');
+        hamburger.setAttribute('aria-expanded', 'false');
+        hamburger.blur();
       }
     });
   }
@@ -159,8 +165,8 @@ function openLightbox(img) {
   const lightboxImg = document.getElementById("lightbox-img");
 
   if (lightbox && lightboxImg) {
-    lightboxImg.src = img.src;
-    lightboxImg.alt = img.alt;
+    lightboxImg.src = img.src || (img.dataset && img.dataset.src) || '';
+    lightboxImg.alt = img.alt || img.getAttribute('alt') || img.title || 'Enlarged image';
     lightbox.style.display = "flex";
     document.body.style.overflow = "hidden";
 
