@@ -1,0 +1,6 @@
+# NOTE: This file was created earlier when Netlify rules were being used.
+# The site will be hosted on GitHub Pages (custom domain: fnydii.org),
+# which does not use an `_redirects` file. The actual hiding strategy
+# uses `robots.txt` and meta refresh + noindex on the specific pages.
+# Left here only for record; no active redirect rules are present.
+

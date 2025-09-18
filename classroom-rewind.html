@@ -25,11 +25,11 @@
             <div class="dropdown-content">
               <a href="digital-skills.html">Digital Skills</a>
               <a href="arts-culture.html">Arts & Culture</a>
-              <a href="epwp-projects.html">Community Job Creation Projects</a>
+              <span class="disabled-link">Community Job Creation Projects</span>
             </div>
           </div>
           <a href="student-portal.html">Student Portal</a>
-          <a href="classroom-rewind.html">Classroom Rewind</a>
+          <span class="disabled-link">Classroom Rewind</span>
           <a href="events.news.html">Events & News</a>
           <a href="get-involved.html">Get Involved</a>
           <a href="contact.html">Contact</a>
@@ -138,5 +138,23 @@
     Main JavaScript file for site-wide interactivity.
     ================================================================== -->
     <script src="js/main.js"></script>
+    <meta name="robots" content="noindex, nofollow" />
+    <!-- Immediately redirect visitors to home; keep page content briefly for screenreaders/bots -->
+    <meta http-equiv="refresh" content="0;url=/index.html">
+    <noscript>
+      <style>.hidden-ns{display:none}</style>
+    </noscript>
+    <script>
+      // Add a visible notice for a short moment for users with JS disabled
+      document.addEventListener('DOMContentLoaded', function(){
+        var notice = document.createElement('div');
+        notice.style.background = '#fff3cd';
+        notice.style.color = '#856404';
+        notice.style.padding = '1rem';
+        notice.style.textAlign = 'center';
+        notice.textContent = 'This page is no longer available and you are being redirected to the homepage.';
+        document.body.insertBefore(notice, document.body.firstChild);
+      });
+    </script>
   </body>
 </html>

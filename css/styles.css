@@ -230,6 +230,16 @@ a:hover {
 .text-left { text-align: left; }
 .text-right { text-align: right; }
 
+/* Disabled link style used when pages are hidden */
+.disabled-link {
+  color: rgba(255,255,255,0.8);
+  opacity: 0.8;
+  cursor: default;
+  pointer-events: none;
+  padding: 0.5rem 1rem;
+  display: inline-block;
+}
+
 /* ==========================================================================
    4. NAVIGATION
    ========================================================================== */
