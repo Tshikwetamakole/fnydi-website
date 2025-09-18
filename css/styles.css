@@ -415,6 +415,23 @@ a:hover {
   transition: all var(--transition-normal);
   box-shadow: var(--shadow-lg);
   border: 2px solid transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-buttons a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.hero-buttons a:hover::before {
+  left: 100%;
 }
 
 .hero-buttons a:hover {
@@ -512,11 +529,15 @@ a:hover {
   height: 60px;
   width: auto;
   filter: grayscale(100%);
-  transition: filter var(--transition-normal);
+  transition: all var(--transition-normal);
+  border-radius: var(--radius-md);
+  padding: var(--space-2);
 }
 
 .partner-logos img:hover {
   filter: grayscale(0%);
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 /* Blockquote */
@@ -830,14 +851,16 @@ blockquote span {
     right: var(--space-4);
     padding: var(--space-3) var(--space-5);
     font-size: var(--text-sm);
+    z-index: 1001;
   }
 
   .whatsapp-btn {
-    bottom: var(--space-4);
-    right: calc(var(--space-4) + 140px);
+    bottom: calc(var(--space-4) + 60px);
+    right: var(--space-4);
     width: 50px;
     height: 50px;
     font-size: var(--text-lg);
+    z-index: 1001;
   }
 
   /* Typography & Layout */
@@ -887,6 +910,18 @@ input:focus,
 textarea:focus {
   outline: 2px solid var(--primary-orange);
   outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(255, 107, 53, 0.2);
+  border-radius: var(--radius-md);
+}
+
+/* Enhanced focus for interactive elements */
+.btn-primary:focus,
+.btn-secondary:focus,
+.hero-buttons a:focus,
+.cta-buttons a:focus {
+  outline: 2px solid var(--neutral-100);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.3);
 }
 
 /* High contrast mode support */
@@ -1253,7 +1288,60 @@ textarea:focus {
   border-radius: 5px;
 }
 
-/* Button utility classes */
+/* Loading state styles */
+.loading {
+  opacity: 0.7;
+  pointer-events: none;
+  position: relative;
+}
+
+.loading::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  margin: -10px 0 0 -10px;
+  border: 2px solid transparent;
+  border-top: 2px solid currentColor;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Enhanced button styles */
+button[type="submit"]:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Skip link for accessibility */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: var(--primary-orange);
+  color: var(--neutral-100);
+  padding: 8px;
+  text-decoration: none;
+  border-radius: var(--radius-md);
+  z-index: 1002;
+  transition: top 0.3s;
+}
+
+.skip-link:focus {
+  top: 6px;
+}
 .btn {
   padding: 15px 30px;
   border-radius: 30px;
@@ -1293,11 +1381,25 @@ textarea:focus {
   border-radius: var(--radius-xl);
   box-shadow: var(--shadow-md);
   text-align: center;
+  transition: all var(--transition-normal);
+  border: 1px solid var(--neutral-300);
+}
+
+.program-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  border-color: var(--primary-orange);
 }
 
 .program-card-icon {
   font-size: var(--text-5xl);
   margin-bottom: var(--space-4);
+  transition: all var(--transition-normal);
+}
+
+.program-card:hover .program-card-icon {
+  transform: scale(1.1);
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
 }
 
 .btn-outline-light {

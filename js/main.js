@@ -11,6 +11,11 @@ document.addEventListener("DOMContentLoaded", function () {
         "aria-expanded",
         navLinks.classList.contains("show")
       );
+      
+      // Add animation class
+      if (navLinks.classList.contains("show")) {
+        navLinks.style.animation = "slideInDown 0.3s ease-out";
+      }
     });
 
     // Close mobile menu when clicking on a link
@@ -26,6 +31,15 @@ document.addEventListener("DOMContentLoaded", function () {
       if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
         navLinks.classList.remove("show");
         hamburger.setAttribute("aria-expanded", "false");
+      }
+    });
+
+    // Handle escape key for mobile menu
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && navLinks.classList.contains("show")) {
+        navLinks.classList.remove("show");
+        hamburger.setAttribute("aria-expanded", "false");
+        hamburger.focus();
       }
     });
   }
