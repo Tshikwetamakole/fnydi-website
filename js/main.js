@@ -44,62 +44,109 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // Add fade-in animation to elements when they come into view
+  // Enhanced fade-in animation with staggered effect
   const observerOptions = {
     threshold: 0.1,
     rootMargin: "0px 0px -50px 0px",
   };
 
   const observer = new IntersectionObserver(function (entries) {
-    entries.forEach((entry) => {
+    entries.forEach((entry, index) => {
       if (entry.isIntersecting) {
-        entry.target.classList.add("fade-in");
+        // Add staggered delay for multiple elements
+        setTimeout(() => {
+          entry.target.classList.add("fade-in");
+          entry.target.style.animationDelay = `${index * 0.1}s`;
+        }, index * 100);
         observer.unobserve(entry.target);
       }
     });
   }, observerOptions);
 
-  // Observe elements for animation
+  // Observe elements for animation with enhanced selectors
   document
-    .querySelectorAll(".program-content, .contact-grid, .page-header")
+    .querySelectorAll(".program-content, .contact-grid, .page-header, .program-card, .partner-logos, .cta-buttons")
     .forEach((el) => {
       observer.observe(el);
     });
 
-  // Add loading states to buttons
+  // Enhanced loading states and button interactions
   document
-    .querySelectorAll("button, .cta-buttons a, .hero-buttons a")
+    .querySelectorAll("button, .cta-buttons a, .hero-buttons a, .btn-primary, .btn-secondary")
     .forEach((button) => {
-      button.addEventListener("click", function () {
-        if (this.type !== "submit") {
-          this.style.transform = "scale(0.98)";
+      // Add ripple effect on click
+      button.addEventListener("click", function (e) {
+        const ripple = document.createElement("span");
+        const rect = this.getBoundingClientRect();
+        const size = Math.max(rect.width, rect.height);
+        const x = e.clientX - rect.left - size / 2;
+        const y = e.clientY - rect.top - size / 2;
+        
+        ripple.style.width = ripple.style.height = size + "px";
+        ripple.style.left = x + "px";
+        ripple.style.top = y + "px";
+        ripple.classList.add("ripple");
+        
+        this.appendChild(ripple);
+        
+        // Remove ripple after animation
+        setTimeout(() => {
+          if (ripple.parentNode) {
+            ripple.parentNode.removeChild(ripple);
+          }
+        }, 600);
+        
+        // Scale effect for non-submit buttons
+        if (this.type !== "submit" && !this.href) {
+          this.style.transform = "scale(0.95)";
           setTimeout(() => {
             this.style.transform = "";
           }, 150);
         }
       });
+      
+      // Enhanced hover effects
+      button.addEventListener("mouseenter", function() {
+        this.style.transition = "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)";
+      });
     });
 
-  // Navbar scroll effect
+  // Enhanced navbar scroll effect with parallax
   let lastScrollTop = 0;
   const navbar = document.querySelector(".navbar");
+  let ticking = false;
 
-  window.addEventListener("scroll", function () {
+  function updateNavbar() {
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const scrollDirection = scrollTop > lastScrollTop ? 'down' : 'up';
 
     if (scrollTop > lastScrollTop && scrollTop > 100) {
       navbar.style.transform = "translateY(-100%)";
+      navbar.style.opacity = "0.95";
     } else {
       navbar.style.transform = "translateY(0)";
+      navbar.style.opacity = "1";
     }
 
-    if (scrollTop > 10) {
+    if (scrollTop > 50) {
       navbar.classList.add("scrolled");
+      navbar.style.background = "rgba(106, 76, 147, 0.98)";
+      navbar.style.backdropFilter = "blur(15px)";
     } else {
       navbar.classList.remove("scrolled");
+      navbar.style.background = "rgba(106, 76, 147, 0.95)";
+      navbar.style.backdropFilter = "blur(10px)";
     }
 
     lastScrollTop = scrollTop;
+    ticking = false;
+  }
+
+  window.addEventListener("scroll", function () {
+    if (!ticking) {
+      requestAnimationFrame(updateNavbar);
+      ticking = true;
+    }
   });
 });
 
@@ -142,15 +189,55 @@ function closeLightbox() {
   }
 }
 
-// Utility function to add CSS class for navbar scroll effect
+// Enhanced CSS for navbar scroll effect and loading states
 const style = document.createElement("style");
 style.textContent = `
   .navbar.scrolled {
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   }
 
   .navbar {
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Loading spinner */
+  .loading-spinner {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: #ffffff;
+    animation: spin 1s ease-in-out infinite;
+  }
+
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+
+  /* Enhanced form loading state */
+  .form-loading {
+    opacity: 0.7;
+    pointer-events: none;
+  }
+
+  .form-loading button {
+    position: relative;
+  }
+
+  .form-loading button::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 16px;
+    height: 16px;
+    margin: -8px 0 0 -8px;
+    border: 2px solid transparent;
+    border-top-color: currentColor;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
   }
 `;
 document.head.appendChild(style);
@@ -431,7 +518,7 @@ function logoutStudent() {
   document.getElementById("loginError").textContent = "";
 }
 
-// Handle Formspree response with popup
+// Enhanced Formspree response with loading states and better UX
 document.addEventListener("DOMContentLoaded", function () {
   const form = document.getElementById("contactForm");
   const responseBox = document.getElementById("formResponse");
@@ -442,10 +529,11 @@ document.addEventListener("DOMContentLoaded", function () {
       const formData = new FormData(form);
       const submitButton = form.querySelector('button[type="submit"]');
 
-      // Set loading state
+      // Enhanced loading state
       const originalText = submitButton.textContent;
-      submitButton.textContent = "Sending...";
+      submitButton.innerHTML = '<span class="loading-spinner"></span> Sending...';
       submitButton.disabled = true;
+      form.classList.add('form-loading');
 
       fetch(form.action, {
         method: "POST",
@@ -457,9 +545,12 @@ document.addEventListener("DOMContentLoaded", function () {
       .then(response => {
         if (response.ok) {
           responseBox.className = 'form-response-success';
-          responseBox.innerHTML = `<strong>✓ Thank you!</strong><br>Your message was sent successfully.`;
+          responseBox.innerHTML = `<strong>✓ Thank you!</strong><br>Your message was sent successfully. We'll get back to you soon!`;
           responseBox.style.display = "block";
           form.reset();
+          
+          // Add success animation
+          responseBox.style.animation = 'fadeIn 0.5s ease-out';
         } else {
           return response.json().then(data => {
             throw new Error(data.error || "Oops! Something went wrong.");
@@ -468,18 +559,24 @@ document.addEventListener("DOMContentLoaded", function () {
       })
       .catch(error => {
         responseBox.className = 'form-response-error';
-        responseBox.textContent = `⚠ Error: ${error.message}`;
+        responseBox.innerHTML = `⚠ <strong>Error:</strong> ${error.message}<br><small>Please try again or contact us directly.</small>`;
         responseBox.style.display = "block";
+        responseBox.style.animation = 'fadeIn 0.5s ease-out';
       })
       .finally(() => {
-        submitButton.textContent = originalText;
+        submitButton.innerHTML = originalText;
         submitButton.disabled = false;
+        form.classList.remove('form-loading');
 
-        // Auto-hide after 5s
+        // Auto-hide after 7s
         setTimeout(() => {
-          responseBox.style.display = "none";
-          responseBox.innerHTML = "";
-        }, 5000);
+          responseBox.style.opacity = '0';
+          setTimeout(() => {
+            responseBox.style.display = "none";
+            responseBox.innerHTML = "";
+            responseBox.style.opacity = '1';
+          }, 300);
+        }, 7000);
       });
     });
   }
