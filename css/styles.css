@@ -502,6 +502,12 @@ a:hover {
 /* ==========================================================================
    7. PROGRAM CONTENT & SHARED COMPONENTS
    ========================================================================== */
+
+   .whatsapp-icon {
+  width: 50px;   /* adjust size */
+  height: 50px;  /* keeps it square */
+}
+
 .program-content {
   max-width: 800px;
   margin: 0 auto;
