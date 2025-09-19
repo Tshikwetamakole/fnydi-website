@@ -1,3 +1,4 @@
 User-agent: *
 Disallow: /events-projects.html
+Sitemap: https://fnydi.org.za/sitemap.xml
 
