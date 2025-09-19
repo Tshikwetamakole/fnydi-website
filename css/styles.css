@@ -1244,6 +1244,22 @@ textarea:focus {
   border: 0;
 }
 
+/* Make skip link visible when focused */
+.skip-link:focus {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: auto;
+  height: auto;
+  padding: var(--space-3) var(--space-4);
+  margin: var(--space-2);
+  clip: auto;
+  background: var(--primary-orange);
+  color: var(--neutral-100);
+  border-radius: var(--radius-md);
+  z-index: 10000;
+}
+
 .fade-in {
   animation: fadeIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }

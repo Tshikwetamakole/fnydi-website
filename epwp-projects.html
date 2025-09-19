@@ -4,9 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>EPWP & Community Job Creation Projects | FNYDI</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <meta http-equiv="refresh" content="0;url=/index.html">
+    <link rel="canonical" href="https://fnydi.org.za/epwp-projects.html" />
     <link rel="stylesheet" href="css/styles.css" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
   </head>
   <body>
+  <a href="#main-content" class="skip-link sr-only">Skip to content</a>
  <!-- =================================================================
     HEADER & NAVIGATION
     This section contains the main navigation bar for the website.
@@ -16,8 +21,8 @@
         <a href="index.html" class="logo">
           <img src="assets/logos/logo.png" alt="FNYDI Logo" />
         </a>
-        <button class="hamburger" id="hamburger">&#9776;</button>
-        <nav class="nav-links" id="nav-links">
+        <button class="hamburger" id="hamburger" aria-controls="nav-links" aria-expanded="false" aria-label="Toggle navigation">&#9776;</button>
+        <nav class="nav-links" id="nav-links" role="navigation" aria-label="Primary">
           <a href="index.html">Home</a>
           <a href="about.html">About</a>
           <a href="digital-skills.html">Digital Skills</a> 
@@ -36,7 +41,8 @@
    rel="noopener noreferrer"
    title="WhatsApp Us">
   <img src="assets/icons/whatsapp.svg" 
-       alt="WhatsApp"
+  alt="WhatsApp"
+  loading="lazy"
        class="whatsapp-icon">
 </a>
 
@@ -45,6 +51,7 @@
     PAGE HEADER
     Title for the EPWP & Community Job Creation Projects page.
     ================================================================== -->
+    <main id="main-content">
     <section class="page-header">
       <h1>EPWP & Community Job Creation Projects</h1>
       <p>
@@ -83,6 +90,7 @@
         src="assets/images/kamoso-award.jpg"
         alt="Kamoso Award Certificate"
         class="d-block mx-auto max-w-300"
+        loading="lazy"
       />
 
       <h3>Real-World Training</h3>
@@ -90,18 +98,12 @@
         Participants gain practical experience and soft skills while wearing
         their recognizable EPWP orange/yellow uniforms.
       </p>
+      <!-- Gallery images temporarily removed to avoid 404s; add actual images under assets/images and re-enable.
       <div class="gallery-grid">
-        <img
-          src="assets/images/epwp-training1.jpg"
-          alt="Youth in EPWP uniform"
-          onclick="openLightbox(this)"
-        />
-        <img
-          src="assets/images/epwp-project2.jpg"
-          alt="Community project"
-          onclick="openLightbox(this)"
-        />
+        <img src="assets/images/epwp-training1.jpg" alt="Youth in EPWP uniform" onclick="openLightbox(this)" />
+        <img src="assets/images/epwp-project2.jpg" alt="Community project" onclick="openLightbox(this)" />
       </div>
+      -->
 
       <h3>Get Involved</h3>
       <div class="cta-buttons">
@@ -133,9 +135,7 @@
     SCRIPTS
     Main JavaScript file for site-wide interactivity.
     ================================================================== -->
-    <script src="js/main.js"></script>
-    <meta name="robots" content="noindex, nofollow" />
-    <meta http-equiv="refresh" content="0;url=/index.html">
+  <script src="js/main.js" defer></script>
     <noscript>
       <style>.hidden-ns{display:none}</style>
     </noscript>
@@ -150,5 +150,6 @@
         document.body.insertBefore(notice, document.body.firstChild);
       });
     </script>
+    </main>
   </body>
 </html>

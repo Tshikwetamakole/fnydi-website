@@ -4,18 +4,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact Us | FNYDI</title>
-    <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
   <link rel="canonical" href="https://fnydi.org.za/contact.html" />
   <meta name="description" content="Contact FNYDI for program information, partnerships, or support. Find our address, email, and phone details." />
   <meta property="og:title" content="Contact FNYDI" />
   <meta property="og:description" content="Contact FNYDI for program information, partnerships, or support. Find our address, email, and phone details." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://fnydi.org.za/contact.html" />
-  <meta property="og:image" content="https://fnydi.org.za/assets/logos/logo.png" />
+  <meta property="og:image" content="https://fnydi.org.za/assets/images/gallery1.jpg" />
+  <meta property="og:image:alt" content="FNYDI youth programs and community impact" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Contact FNYDI" />
   <meta name="twitter:description" content="Contact FNYDI for program information, partnerships, or support. Find our address, email, and phone details." />
-  <meta name="twitter:image" content="https://fnydi.org.za/assets/logos/logo.png" />
+  <meta name="twitter:image" content="https://fnydi.org.za/assets/images/gallery1.jpg" />
+  <meta name="twitter:image:alt" content="FNYDI youth programs and community impact" />
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -27,6 +30,7 @@
     </script>
   </head>
   <body>
+  <a href="#main-content" class="skip-link sr-only">Skip to content</a>
   <!-- =================================================================
     HEADER & NAVIGATION
     This section contains the main navigation bar for the website.
@@ -36,12 +40,12 @@
         <a href="index.html" class="logo">
           <img src="assets/logos/logo.png" alt="FNYDI Logo" />
         </a>
-        <button class="hamburger" id="hamburger">&#9776;</button>
-        <nav class="nav-links" id="nav-links">
+        <button class="hamburger" id="hamburger" aria-controls="nav-links" aria-expanded="false" aria-label="Toggle navigation">&#9776;</button>
+        <nav class="nav-links" id="nav-links" role="navigation" aria-label="Primary">
           <a href="index.html">Home</a>
           <a href="about.html">About</a>
           <a href="digital-skills.html">Digital Skills</a> 
-          <a href="contact.html">Contact</a>
+          <a href="contact.html" aria-current="page">Contact</a>
          </nav>
       </div>
     </header>
@@ -57,7 +61,8 @@
   title="WhatsApp Us"
   aria-label="Chat with us on WhatsApp">
   <img src="assets/icons/whatsapp.svg" 
-       alt="WhatsApp"
+  alt="WhatsApp"
+  loading="lazy"
        class="whatsapp-icon">
 </a>
 
@@ -66,6 +71,7 @@
     PAGE HEADER
     Title for the Contact Us page.
     ================================================================== -->
+    <main id="main-content">
     <section class="page-header">
       <h1>Contact Us</h1>
       <p>
@@ -121,6 +127,7 @@
         </div>
       </div>
     </section>
+    </main>
 
     <!-- =================================================================
     FOOTER
@@ -137,6 +144,6 @@
     SCRIPTS
     Main JavaScript file for site-wide interactivity.
     ================================================================== -->
-    <script src="js/main.js"></script>
+    <script src="js/main.js" defer></script>
   </body>
 </html>

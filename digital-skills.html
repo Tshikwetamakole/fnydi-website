@@ -11,14 +11,17 @@
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://fnydi.org.za/digital-skills.html" />
     <meta property="og:site_name" content="FNYDI" />
-    <meta property="og:image" content="https://fnydi.org.za/assets/logos/logo.png" />
+    <meta property="og:image" content="https://fnydi.org.za/assets/images/gallery1.jpg" />
+    <meta property="og:image:alt" content="FNYDI youth programs and community impact" />
     <title>Digital Skills Development | FNYDI</title>
     <link rel="stylesheet" href="css/styles.css" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
     <link rel="canonical" href="https://fnydi.org.za/digital-skills.html" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Digital Skills Development | FNYDI" />
     <meta name="twitter:description" content="Free industry-aligned IT training for underserved youth" />
-    <meta name="twitter:image" content="https://fnydi.org.za/assets/logos/logo.png" />
+    <meta name="twitter:image" content="https://fnydi.org.za/assets/images/gallery1.jpg" />
+    <meta name="twitter:image:alt" content="FNYDI youth programs and community impact" />
         <script type="application/ld+json">
         {
             "@context": "https://schema.org",
@@ -29,21 +32,23 @@
         }
         </script>
 </head>
+<body>
+    <a href="#main-content" class="skip-link sr-only">Skip to content</a>
  <!-- =================================================================
     HEADER & NAVIGATION
     This section contains the main navigation bar for the website.
     ================================================================== -->
-    <header class="navbar">
+        <header class="navbar">
       <div class="nav-container">
         <a href="index.html" class="logo">
           <img src="assets/logos/logo.png" alt="FNYDI Logo" />
         </a>
-        <button class="hamburger" id="hamburger">&#9776;</button>
-        <nav class="nav-links" id="nav-links">
-          <a href="index.html">Home</a>
-          <a href="about.html">About</a>
-          <a href="digital-skills.html">Digital Skills</a> 
-          <a href="contact.html">Contact</a>
+                <button class="hamburger" id="hamburger" aria-controls="nav-links" aria-expanded="false" aria-label="Toggle navigation">&#9776;</button>
+                        <nav class="nav-links" id="nav-links" role="navigation" aria-label="Primary">
+                            <a href="index.html">Home</a>
+                            <a href="about.html">About</a>
+                            <a href="digital-skills.html" aria-current="page">Digital Skills</a> 
+                            <a href="contact.html">Contact</a>
          </nav>
       </div>
     </header>
@@ -58,10 +63,12 @@
    rel="noopener noreferrer"
     title="WhatsApp Us" aria-label="Chat with us on WhatsApp">
   <img src="assets/icons/whatsapp.svg" 
-       alt="WhatsApp"
+         alt="WhatsApp"
+         loading="lazy"
        class="whatsapp-icon">
 </a>
 
+     <main id="main-content">
         <!-- =================================================================
         PAGE HEADER
         Title for the Digital Skills page.
@@ -119,6 +126,6 @@
     SCRIPTS
     Main JavaScript file for site-wide interactivity.
     ================================================================== -->
-    <script src="js/main.js"></script>
+    <script src="js/main.js" defer></script>
 </body>
 </html>

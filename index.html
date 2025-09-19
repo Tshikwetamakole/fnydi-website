@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Far North Youth Development Initiative</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="preload" as="image" href="assets/logos/logo.png" imagesrcset="assets/logos/logo.png 1x" />
+  <!-- Preload hero bg image for faster LCP; note CSS uses gallery2.jpg -->
+  <link rel="preload" as="image" href="assets/images/gallery2.jpg" />
     <link rel="stylesheet" href="css/styles.css" />
     <link rel="canonical" href="https://fnydi.org.za/" />
     <meta name="description" content="FNYDI empowers youth in Limpopo through free digital skills training, arts & culture programs, and community job creation initiatives." />
@@ -13,11 +16,13 @@
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://fnydi.org.za/" />
     <meta property="og:site_name" content="FNYDI" />
-    <meta property="og:image" content="https://fnydi.org.za/assets/logos/logo.png" />
+  <meta property="og:image" content="https://fnydi.org.za/assets/images/gallery1.jpg" />
+  <meta property="og:image:alt" content="FNYDI youth programs and community impact" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Far North Youth Development Initiative" />
     <meta name="twitter:description" content="FNYDI empowers youth in Limpopo through free digital skills training, arts & culture programs, and community job creation initiatives." />
-    <meta name="twitter:image" content="https://fnydi.org.za/assets/logos/logo.png" />
+  <meta name="twitter:image" content="https://fnydi.org.za/assets/images/gallery1.jpg" />
+  <meta name="twitter:image:alt" content="FNYDI youth programs and community impact" />
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -36,6 +41,7 @@
     </script>
   </head>
   <body>
+    <a href="#main-content" class="skip-link sr-only">Skip to content</a>
     <!-- =================================================================
     HEADER & NAVIGATION
     This section contains the main navigation bar for the website.
@@ -43,11 +49,11 @@
     <header class="navbar">
       <div class="nav-container">
         <a href="index.html" class="logo">
-          <img src="assets/logos/logo.png" alt="FNYDI Logo" />
+          <img src="assets/logos/logo.png" alt="FNYDI Logo" decoding="async" />
         </a>
-        <button class="hamburger" id="hamburger">&#9776;</button>
-        <nav class="nav-links" id="nav-links">
-          <a href="index.html">Home</a>
+        <button class="hamburger" id="hamburger" aria-controls="nav-links" aria-expanded="false" aria-label="Toggle navigation">&#9776;</button>
+        <nav class="nav-links" id="nav-links" role="navigation" aria-label="Primary">
+          <a href="index.html" aria-current="page">Home</a>
           <a href="about.html">About</a>
           <a href="digital-skills.html">Digital Skills</a> 
           <a href="contact.html">Contact</a>
@@ -65,10 +71,13 @@
    rel="noopener noreferrer"
   title="WhatsApp Us" aria-label="Chat with us on WhatsApp">
   <img src="assets/icons/whatsapp.svg" 
-       alt="WhatsApp"
-       class="whatsapp-icon">
+    alt="WhatsApp"
+    loading="lazy"
+    width="50" height="50"
+    class="whatsapp-icon">
 </a>
 
+  <main id="main-content">
     <!-- =================================================================
     HERO SECTION
     The main landing section with a prominent headline and call-to-action buttons.
@@ -144,7 +153,7 @@
               Academy, NEMISA, and University of Limpopo. Courses include
               coding, networking, IT support, and more.
             </p>
-            <a href="https://docs.google.com/formx/d/e/1FAIpQLSdbji0Usta_TdbELWc8PqBuVz171sr4t704f5QW4l4um2nCgQ/viewform?usp=header" target="_blank" rel="noopener" class="btn-primary">Register Now</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdbji0Usta_TdbELWc8PqBuVz171sr4t704f5QW4l4um2nCgQ/viewform?usp=header" target="_blank" rel="noopener noreferrer" class="btn-primary">Register Now</a>
           </div>
 
           <!-- Arts & Culture Card -->
@@ -184,9 +193,9 @@
         <div class="container text-center">
             <h3>Our Partners</h3>
             <div class="partner-logos">
-                <img src="assets/logos/cisco logo.jpg" alt="Cisco Networking Academy" />
-                <img src="assets/logos/nemisa.png" alt="NEMISA" />
-                <img src="assets/logos/ul logo.png" alt="University of Limpopo" />
+                <img src="assets/logos/cisco logo.jpg" alt="Cisco Networking Academy" loading="lazy" height="60" />
+                <img src="assets/logos/nemisa.png" alt="NEMISA" loading="lazy" height="60" />
+                <img src="assets/logos/ul logo.png" alt="University of Limpopo" loading="lazy" height="60" />
             </div>
             <p>
                 Courses are accredited or endorsed by Cisco Networking Academy and
@@ -212,6 +221,7 @@
       </div>
     </section>
 
+    </main>
     <!-- =================================================================
     FOOTER
     Contains contact information and other essential details.
@@ -227,6 +237,6 @@
     SCRIPTS
     Main JavaScript file for site-wide interactivity.
     ================================================================== -->
-    <script src="js/main.js"></script>
+    <script src="js/main.js" defer></script>
   </body>
 </html>
